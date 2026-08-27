@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelje — Reformer Pilates</title>
+<meta name="description" content="Atelje — studio za reformer pilates. Grupni i individualni časovi, programi za držanje tela i edukacije za instruktore.">
+<!-- PREVIEW: ukloniti ova dva reda pre puštanja na reformeratelje.com -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF8F4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23534135'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='21' fill='%23E2CDB8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph — dopuniti pravim URL-om i slikom kada bude spremna -->
+<meta property="og:title" content="Atelje — Reformer Pilates">
+<meta property="og:description" content="Studio za reformer pilates. Grupni i individualni časovi, programi i edukacije.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://reformeratelje.com/">
+<meta property="og:image" content="https://reformeratelje.com/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   REFORMER ATELJE — tokeni
+   ============================================================ */
+:root{
+  --porcelain:#FBF8F4;   /* osnovna podloga, krem */
+  --sand:#F1E7DA;        /* sekundarna površina, bež */
+  --latte:#D9C4AC;       /* bela kafa — linije, ivice */
+  --powder:#E6D4CD;      /* puder — akcenat, u malim dozama */
+  --cocoa:#7A6455;       /* tekst, sekundarni */
+  --espresso:#3B2E24;    /* naslovi, primarni tekst */
+
+  /* uzorkovano direktno iz logotipa */
+  --brand:#534135;       /* braon podloga logotipa */
+  --brand-line:#E2CDB8;  /* krem linija logotipa */
+
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --body:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+  --max:1180px;
+  --gutter:clamp(20px,5vw,64px);
+  --sec-y:clamp(72px,10vw,140px);
+
+  --rad:2px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--porcelain);
+  color:var(--espresso);
+  font-family:var(--body);
+  font-weight:300;
+  font-size:clamp(15px,.55vw + 14px,17px);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+h1,h2,h3,.display{
+  font-family:var(--display);
+  font-weight:400;
+  line-height:1.1;
+  letter-spacing:.004em;
+  margin:0;
+}
+h1{font-size:clamp(44px,8vw,86px);font-weight:400}
+h2{font-size:clamp(34px,5vw,58px)}
+h3{font-size:clamp(21px,1.8vw,26px);line-height:1.25;font-weight:500}
+p{margin:0 0 1.1em}
+p:last-child{margin-bottom:0}
+
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:400;
+  color:var(--cocoa);
+  margin:0 0 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.eyebrow::before{
+  content:"";
+  width:28px;height:1px;
+  background:var(--latte);
+  flex:none;
+}
+.lede{
+  font-size:clamp(17px,1.3vw,20px);
+  color:var(--cocoa);
+  max-width:56ch;
+}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.sec{padding-block:var(--sec-y);position:relative;z-index:1}
+.sec--sand{background:var(--sand)}
+.sec__head{max-width:62ch;margin-bottom:clamp(40px,5vw,68px)}
+
+/* ---------- skip link ---------- */
+.skip{
+  position:absolute;left:-9999px;top:12px;z-index:100;
+  background:var(--espresso);color:var(--porcelain);
+  padding:10px 18px;border-radius:var(--rad);
+}
+.skip:focus{left:12px}
+
+/* ---------- header ---------- */
+.hdr{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,248,244,.86);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s var(--ease),background .3s var(--ease);
+}
+.hdr.is-stuck{border-bottom-color:var(--latte)}
+.hdr__in{
+  max-width:var(--max);margin-inline:auto;
+  padding:16px var(--gutter);
+  display:flex;align-items:center;gap:24px;
+}
+.brand{
+  display:grid;gap:3px;
+  text-decoration:none;line-height:1;
+  margin-right:auto;white-space:nowrap;
+}
+.brand__name{
+  font-family:var(--display);
+  font-size:27px;font-weight:500;letter-spacing:.015em;
+}
+.brand__sub{
+  font-size:8.5px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--cocoa);font-weight:400;
+}
+.nav{display:flex;align-items:center;gap:clamp(14px,1.8vw,28px)}
+.nav a:not(.btn){
+  text-decoration:none;
+  font-size:14px;
+  color:var(--cocoa);
+  padding:6px 0;
+  position:relative;
+  transition:color .25s var(--ease);
+}
+.nav a:not(.btn)::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;
+  height:1px;background:var(--espresso);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease);
+}
+.nav a:not(.btn):hover,.nav a:not(.btn)[aria-current="true"]{color:var(--espresso)}
+.nav a:not(.btn):hover::after,.nav a:not(.btn)[aria-current="true"]::after{transform:scaleX(1)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--body);font-size:14px;font-weight:400;
+  letter-spacing:.05em;
+  padding:14px 32px;
+  line-height:1.2;
+  white-space:nowrap;
+  border-radius:100px;
+  border:1px solid var(--espresso);
+  background:var(--espresso);color:var(--porcelain);
+  text-decoration:none;cursor:pointer;
+  transition:background .3s var(--ease),color .3s var(--ease),transform .3s var(--ease);
+}
+.btn:hover{background:transparent;color:var(--espresso)}
+.btn:active{transform:translateY(1px)}
+.btn--ghost{background:transparent;color:var(--espresso);border-color:var(--latte)}
+.btn--ghost:hover{background:var(--espresso);color:var(--porcelain);border-color:var(--espresso)}
+.btn--sm{padding:11px 28px;font-size:13px}
+
+.lang{
+  display:inline-flex;align-items:stretch;
+  border:1px solid var(--latte);
+  border-radius:100px;
+  background:transparent;
+  padding:2px;
+  cursor:pointer;
+  font-family:var(--body);
+  flex:none;
+  gap:2px;
+}
+.lang span{
+  padding:6px 12px;
+  border-radius:100px;
+  font-size:10.5px;letter-spacing:.16em;
+  color:var(--cocoa);
+  line-height:1.4;
+  transition:background .3s var(--ease),color .3s var(--ease);
+}
+.lang span.is-on{background:var(--espresso);color:var(--porcelain)}
+.lang:hover span:not(.is-on){color:var(--espresso)}
+
+.burger{
+  display:none;
+  width:42px;height:42px;
+  border:1px solid var(--latte);border-radius:100px;
+  background:transparent;cursor:pointer;
+  padding:0;place-items:center;
+}
+.burger span{display:block;width:16px;height:1px;background:var(--espresso);transition:transform .3s var(--ease),opacity .2s}
+.burger span+span{margin-top:5px}
+.hdr.is-open .burger span:nth-child(1){transform:translateY(3px) rotate(45deg)}
+.hdr.is-open .burger span:nth-child(2){opacity:0}
+.hdr.is-open .burger span:nth-child(3){transform:translateY(-3px) rotate(-45deg)}
+
+/* ---------- rail: potpis stranice (šina i nosač reformera) ---------- */
+.rail{
+  position:fixed;
+  right:clamp(18px,2.4vw,38px);
+  top:50%;transform:translateY(-50%);
+  z-index:40;
+  display:grid;
+}
+.rail::before{
+  content:"";
+  position:absolute;left:5px;top:6px;bottom:6px;
+  width:1px;background:var(--latte);
+}
+.rail__carriage{
+  position:absolute;left:0;top:0;
+  width:11px;height:18px;
+  border:1px solid var(--espresso);
+  border-radius:3px;
+  background:var(--porcelain);
+  transition:transform .45s var(--ease);
+  pointer-events:none;
+}
+.rail a{
+  display:flex;align-items:center;gap:12px;
+  padding:7px 0;
+  text-decoration:none;
+  position:relative;
+}
+.rail__dot{width:11px;height:1px;background:var(--latte);flex:none;transition:background .3s var(--ease)}
+.rail a[aria-current="true"] .rail__dot{background:transparent}
+.rail__name{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cocoa);
+  opacity:0;transform:translateX(-6px);
+  transition:opacity .3s var(--ease),transform .3s var(--ease);
+  white-space:nowrap;
+}
+.rail:hover .rail__name,.rail a:focus-visible .rail__name{opacity:1;transform:none}
+
+/* ---------- skica iz logotipa: prati ceo landing u levoj zoni ---------- */
+.sketch{
+  position:fixed;
+  left:clamp(-78px,-3.2vw,-10px);
+  top:50%;transform:translateY(-50%);
+  width:clamp(210px,18vw,300px);
+  z-index:6;
+  pointer-events:none;
+  color:var(--espresso);
+  opacity:.09;
+}
+.sketch svg{
+  display:block;width:100%;height:auto;
+  fill:currentColor;
+  clip-path:inset(0 0 88% 0);
+  will-change:clip-path;
+}
+.sketch__rule{
+  position:absolute;left:50%;top:-6vh;bottom:-6vh;
+  width:1px;background:currentColor;opacity:.35;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  padding-top:clamp(48px,7vw,90px);
+  padding-bottom:clamp(56px,7vw,110px);
+  overflow:hidden;
+}
+.hero__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:end;
+}
+.hero h1{margin-bottom:26px}
+.hero h1 em{
+  font-style:normal;
+  display:block;
+  color:var(--cocoa);
+  font-size:.62em;
+  letter-spacing:.01em;
+  margin-top:.18em;
+}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero__meta{
+  margin-top:44px;padding-top:22px;
+  border-top:1px solid var(--latte);
+  display:flex;flex-wrap:wrap;gap:28px;
+  font-size:13px;color:var(--cocoa);letter-spacing:.03em;
+}
+
+/* ---------- placeholder za fotografiju ---------- */
+.ph{
+  margin:0;
+  position:relative;
+  background:
+    repeating-linear-gradient(-45deg,rgba(216,195,172,.22) 0 1px,transparent 1px 11px),
+    var(--sand);
+  border:1px solid var(--latte);
+  border-radius:var(--rad);
+  display:grid;place-items:center;
+  aspect-ratio:4/5;
+  overflow:hidden;
+}
+.sec--sand .ph{background:
+    repeating-linear-gradient(-45deg,rgba(216,195,172,.28) 0 1px,transparent 1px 11px),
+    var(--porcelain)}
+.ph--wide{aspect-ratio:16/10}
+.ph--square{aspect-ratio:1}
+.ph__label{
+  text-align:center;
+  padding:18px;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cocoa);
+  line-height:1.9;
+}
+.ph__label svg{display:block;margin:0 auto 10px;opacity:.55}
+.ph__label b{display:block;font-weight:400;color:var(--espresso)}
+
+/* ---------- o nama ---------- */
+.about{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(32px,5vw,80px);
+  align-items:center;
+}
+.about__text p+p{margin-top:0}
+.values{
+  list-style:none;margin:38px 0 0;padding:0;
+  display:grid;gap:0;
+  border-top:1px solid var(--latte);
+}
+.values li{
+  padding:18px 0;
+  border-bottom:1px solid var(--latte);
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:18px;
+  align-items:baseline;
+}
+.values b{
+  font-family:var(--display);
+  font-weight:400;font-size:17px;
+  white-space:nowrap;
+}
+.values span{font-size:14.5px;color:var(--cocoa)}
+
+/* ---------- časovi ---------- */
+.classes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);   /* 6 kartica = 2 puna reda, bez praznih ćelija */
+  gap:1px;
+  background:var(--latte);
+  border:1px solid var(--latte);
+  border-radius:var(--rad);
+  overflow:hidden;
+}
+.class{
+  background:var(--porcelain);
+  padding:clamp(26px,2.6vw,38px);
+  display:flex;flex-direction:column;
+  transition:background .35s var(--ease);
+}
+.sec--sand .class{background:var(--sand)}
+.class:hover{background:var(--powder)}
+.class__top{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;margin-bottom:20px;
+}
+.class__len{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cocoa);
+}
+.class h3{margin-bottom:12px}
+.class p{font-size:14.5px;color:var(--cocoa)}
+.class__for{
+  margin-top:auto;padding-top:22px;
+  font-size:12.5px;color:var(--cocoa);
+  border-top:1px solid var(--latte);
+  letter-spacing:.02em;
+}
+
+/* ---------- usluge ---------- */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:clamp(28px,3vw,48px);
+}
+.service{padding-top:22px;border-top:1px solid var(--latte)}
+.service h3{margin-bottom:10px}
+.service p{font-size:14.5px;color:var(--cocoa)}
+
+/* ---------- edukacije ---------- */
+.edu{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,.8fr);
+  gap:clamp(32px,5vw,72px);
+  align-items:start;
+}
+.modules{list-style:none;margin:0;padding:0;counter-reset:m}
+.modules li{
+  counter-increment:m;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:22px;
+  padding:22px 0;
+  border-top:1px solid var(--latte);
+}
+.modules li:last-child{border-bottom:1px solid var(--latte)}
+.modules li::before{
+  content:counter(m,decimal-leading-zero);
+  font-family:var(--display);
+  font-size:13px;
+  color:var(--cocoa);
+  padding-top:3px;
+}
+.modules h3{font-size:18px;margin-bottom:6px}
+.modules p{font-size:14.5px;color:var(--cocoa)}
+
+/* ---------- utisci ---------- */
+.quotes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(28px,3.4vw,56px);
+}
+.quote{
+  display:flex;flex-direction:column;
+  padding-top:26px;
+  border-top:1px solid var(--latte);
+}
+.quote__mark{
+  font-family:var(--display);
+  font-size:52px;line-height:.6;
+  color:var(--latte);
+  margin-bottom:16px;
+}
+.quote p{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:clamp(18px,1.5vw,21px);
+  line-height:1.55;
+  color:var(--espresso);
+  margin-bottom:24px;
+}
+.quote__by{
+  margin-top:auto;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cocoa);line-height:1.9;
+}
+.quote__by b{display:block;font-weight:400;color:var(--espresso);letter-spacing:.14em}
+.quotes__foot{
+  margin-top:clamp(38px,4vw,58px);
+  padding-top:26px;
+  border-top:1px solid var(--latte);
+  display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;
+}
+.rating{font-size:13px;color:var(--cocoa)}
+.rating b{font-family:var(--display);font-size:22px;font-weight:500;color:var(--espresso)}
+
+/* ---------- cenovnik ---------- */
+.prices{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);   /* 6 stavki = 2 puna reda */
+  gap:1px;
+  background:var(--latte);
+  border:1px solid var(--latte);
+  border-radius:var(--rad);
+  overflow:hidden;
+}
+.price{
+  background:var(--porcelain);
+  padding:clamp(26px,2.4vw,34px);
+  display:flex;flex-direction:column;gap:6px;
+}
+.sec--sand .price{background:var(--sand)}
+.price--pick{background:var(--powder)}
+.sec--sand .price--pick{background:var(--powder)}
+.price__name{font-family:var(--display);font-size:19px}
+.price__note{font-size:13px;color:var(--cocoa);min-height:1.6em}
+.price__amt{
+  font-family:var(--display);
+  font-size:34px;
+  margin-top:14px;
+  letter-spacing:-.02em;
+}
+.price__amt small{font-size:13px;font-family:var(--body);color:var(--cocoa);letter-spacing:.04em}
+.note{margin-top:20px;font-size:13px;color:var(--cocoa)}
+
+/* oznaka za podatke koje klijent tek dostavlja */
+.tbd{
+  color:var(--cocoa);
+  border-bottom:1px dotted var(--latte);
+  font-style:normal;
+}
+
+/* ---------- kontakt ---------- */
+.contact{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(32px,5vw,72px);
+}
+.info{list-style:none;margin:0 0 32px;padding:0}
+.info li{
+  padding:16px 0;
+  border-bottom:1px solid var(--latte);
+  display:grid;grid-template-columns:92px 1fr;gap:16px;align-items:baseline;
+}
+.info li:first-child{border-top:1px solid var(--latte)}
+.info dt,.info b{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cocoa);font-weight:400;
+}
+.info a{text-decoration:none;border-bottom:1px solid var(--latte)}
+.info a:hover{border-bottom-color:var(--espresso)}
+
+.sec--sand .map{background:
+    repeating-linear-gradient(0deg,rgba(217,196,172,.34) 0 1px,transparent 1px 34px),
+    repeating-linear-gradient(90deg,rgba(217,196,172,.34) 0 1px,transparent 1px 34px),
+    var(--porcelain)}
+.map{
+  aspect-ratio:16/9;
+  background:
+    repeating-linear-gradient(0deg,rgba(216,195,172,.3) 0 1px,transparent 1px 34px),
+    repeating-linear-gradient(90deg,rgba(216,195,172,.3) 0 1px,transparent 1px 34px),
+    var(--sand);
+  border:1px solid var(--latte);
+  border-radius:var(--rad);
+  display:grid;place-items:center;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cocoa);
+  text-align:center;padding:16px;
+}
+
+.form{display:grid;gap:18px}
+.field{display:grid;gap:8px}
+.field label{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cocoa);
+}
+.field input,.field select,.field textarea{
+  font-family:var(--body);font-size:15px;font-weight:300;color:var(--espresso);
+  background:transparent;
+  border:0;border-bottom:1px solid var(--latte);
+  padding:10px 2px;
+  border-radius:0;
+  transition:border-color .3s var(--ease);
+}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-bottom-color:var(--espresso);
+}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form__foot{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:6px}
+.form__note{font-size:12.5px;color:var(--cocoa);max-width:34ch}
+.form__ok{
+  display:none;
+  padding:18px 20px;
+  background:var(--powder);
+  border-radius:var(--rad);
+  font-size:14.5px;
+}
+.form.is-sent .form__ok{display:block}
+.form.is-sent .form__body{display:none}
+
+/* ---------- footer ---------- */
+.ftr{
+  background:var(--brand);
+  color:var(--brand-line);
+  padding-block:clamp(56px,7vw,86px);
+  font-size:13px;
+  position:relative;z-index:7;
+}
+.ftr__in{
+  max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(30px,5vw,64px);align-items:center;
+}
+.lockup{display:flex;align-items:center;gap:20px}
+.lockup svg{width:clamp(96px,10vw,124px);height:auto;flex:none}
+.lockup__type{display:grid;gap:6px;line-height:1}
+.lockup__name{font-family:var(--display);font-size:clamp(34px,4vw,46px);font-weight:500;letter-spacing:.015em}
+.lockup__sub{font-size:10px;letter-spacing:.34em;text-transform:uppercase;opacity:.8}
+.ftr__cols{
+  display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center;
+  justify-content:flex-end;
+}
+.ftr a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s var(--ease)}
+.ftr a:hover{border-bottom-color:var(--brand-line)}
+.ftr__legal{opacity:.7;width:100%;text-align:right}
+@media (max-width:860px){
+  .ftr__in{grid-template-columns:1fr}
+  .ftr__cols,.ftr__legal{justify-content:flex-start;text-align:left}
+}
+
+/* ---------- fokus ---------- */
+:where(a,button,input,select,textarea):focus-visible{
+  outline:2px solid var(--espresso);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.is-in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1240px){
+  .sketch{display:none}
+}
+@media (max-width:1080px){
+  .rail{display:none}
+}
+@media (max-width:900px){
+  .hero__grid,.about,.edu,.contact{grid-template-columns:1fr}
+  .hero__grid{align-items:start}
+  .about .ph,.edu .ph{max-width:520px}
+}
+@media (max-width:1000px){
+  .classes,.prices,.quotes{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .classes,.prices,.quotes{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .burger{display:grid}
+  .nav{
+    position:absolute;left:0;right:0;top:100%;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--porcelain);
+    border-bottom:1px solid var(--latte);
+    padding:8px var(--gutter) 22px;
+    display:none;
+  }
+  .hdr.is-open .nav{display:flex}
+  .nav a:not(.btn){padding:13px 0;font-size:15px;border-bottom:1px solid var(--sand)}
+  .nav a:not(.btn)::after{display:none}
+  .nav .btn{margin-top:16px;align-self:start}
+  .row{grid-template-columns:1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#pocetna" data-en="Skip to content">Preskoči na sadržaj</a>
+
+<!-- Skica iz logotipa — vektorizovana iz originalnog JPG-a. Crta se odozgo nadole kako se skroluje. -->
+<div class="sketch" id="sketch" aria-hidden="true">
+  <svg viewBox="0 0 259 476" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(0,476) scale(0.1,-0.1)"><path d="M1140 4636 c-150 -45 -181 -67 -226 -159 -39 -79 -40 -85 -36 -160 4 -71 6 -78 23 -74 11 3 17 1 13 -4 -3 -5 -1 -9 5 -9 5 0 13 5 16 10 4 6 16 8 27 4 20 -6 20 -3 16 62 -7 95 17 143 70 144 28 0 28 0 -5 -59 -23 -41 -25 -51 -14 -65 17 -20 51 -4 51 24 0 15 15 27 53 44 50 22 81 50 118 106 20 31 8 35 371 -143 329 -163 300 -128 240 -282 -41 -109 -35 -101 -65 -71 -14 14 -37 28 -51 32 -21 5 -25 12 -24 37 2 61 -33 122 -110 192 -122 110 -304 136 -447 66 -72 -36 -168 -126 -186 -175 -13 -35 -13 -35 -38 -17 -72 51 -135 70 -175 55 -29 -11 -16 -23 24 -22 43 0 100 -19 100 -33 0 -5 -4 -9 -8 -9 -4 0 -16 -13 -25 -30 -15 -25 -24 -30 -57 -28 -71 2 -98 -17 -118 -86 -10 -33 -15 -63 -11 -66 6 -4 39 -77 39 -86 0 -2 -9 -4 -19 -4 -20 0 -30 17 -32 53 -1 16 -4 12 -10 -11 -13 -42 2 -62 45 -62 19 0 42 -10 61 -26 30 -26 30 -26 -10 -22 -22 3 -46 7 -53 9 -8 2 -23 -8 -34 -23 -21 -27 -21 -27 0 -75 23 -51 30 -42 10 13 -17 47 2 67 56 59 61 -9 176 33 195 71 15 29 15 29 26 -16 16 -62 31 -88 76 -135 39 -41 39 -41 28 -100 -43 -231 -111 -310 -334 -385 -168 -56 -195 -76 -195 -142 0 -43 0 -43 19 -12 27 45 67 70 167 105 175 61 253 116 307 217 35 65 67 177 67 237 0 40 3 45 23 45 12 0 33 9 47 20 20 16 21 19 5 14 -11 -4 -25 -11 -32 -16 -14 -11 -25 5 -17 26 3 9 16 16 28 17 11 0 15 3 9 6 -24 9 -13 23 15 18 27 -6 27 -6 0 10 -69 39 42 85 131 54 17 -6 31 -14 31 -18 0 -12 145 5 200 25 75 26 165 116 183 181 15 58 33 65 69 25 34 -39 35 -62 3 -127 -24 -50 -24 -50 -26 30 -2 80 -2 80 -9 8 -5 -55 -15 -89 -44 -145 -31 -61 -37 -85 -39 -143 -3 -60 -6 -70 -22 -74 -23 -4 -50 -31 -106 -107 -23 -32 -47 -54 -58 -54 -35 0 -170 99 -177 128 -20 97 -31 128 -51 148 -27 27 -29 60 -7 92 9 13 11 22 4 22 -33 0 -37 -104 -5 -130 32 -26 53 -172 36 -237 -6 -22 -33 -70 -59 -106 -190 -256 -126 -534 174 -762 43 -33 81 -63 82 -68 8 -16 42 -28 36 -12 -4 8 -10 15 -14 15 -9 0 -174 142 -208 180 -45 48 -100 141 -122 203 -23 68 -39 197 -23 197 5 0 7 15 5 33 -5 40 34 131 81 190 36 44 67 114 67 148 0 12 5 19 13 16 6 -2 10 -13 8 -23 -16 -85 4 -115 82 -122 88 -7 121 9 146 71 24 59 92 137 134 155 24 10 28 16 23 40 -8 33 43 145 72 161 35 19 62 75 68 142 3 35 17 98 30 139 39 123 56 210 45 224 -39 47 -378 219 -553 280 -71 25 -118 28 -118 7 0 -18 -49 -62 -105 -93 -33 -19 -64 -44 -70 -56 -5 -12 -13 -22 -17 -22 -16 0 -7 32 16 63 47 65 42 81 -23 71 -59 -9 -86 -55 -77 -130 3 -30 2 -54 -3 -54 -9 0 -21 57 -21 103 0 18 -4 26 -11 22 -9 -6 -7 -55 7 -127 6 -32 -14 -29 -25 4 -25 78 -23 99 22 177 41 72 44 74 107 97 151 54 239 64 375 40 330 -59 637 -162 699 -237 77 -91 -18 -460 -246 -954 -99 -216 -140 -357 -137 -475 1 -45 1 -45 11 0 30 148 44 193 99 317 161 360 203 462 253 620 82 263 101 443 53 506 -72 94 -334 191 -682 252 -170 30 -228 31 -325 1z m242 -305 c120 -20 225 -97 279 -203 36 -71 36 -72 -2 -141 -105 -195 -297 -239 -547 -124 -68 31 -68 31 -52 14 8 -9 42 -29 75 -46 33 -17 51 -31 41 -31 -10 0 -31 -14 -47 -31 -29 -31 -29 -31 -94 31 -35 35 -74 82 -86 106 -23 48 -35 57 -25 21 7 -29 -15 -62 -37 -54 -35 13 -33 116 3 155 11 12 20 28 20 37 0 8 7 15 15 15 11 0 15 -11 15 -37 0 -31 2 -34 13 -22 20 25 241 177 288 199 25 11 68 20 99 21 47 1 51 2 27 9 -74 22 -200 -28 -324 -129 -74 -60 -77 -55 -22 28 65 97 155 159 262 180 23 5 42 9 42 10 0 0 25 -3 57 -8z m-434 -228 c2 -7 -4 -13 -13 -13 -18 0 -72 -35 -93 -60 -23 -27 -11 -158 16 -181 13 -10 30 -15 37 -12 22 8 19 -24 -2 -36 -34 -18 -116 -25 -111 -10 3 8 13 16 24 17 47 9 36 23 -12 17 -46 -7 -53 -5 -68 16 -26 38 -21 52 14 34 48 -25 58 -17 13 10 -92 55 -56 168 53 170 34 0 46 6 69 33 28 33 64 41 73 15z m851 -304 c-13 -37 -27 -59 -39 -59 -4 0 4 23 18 50 28 57 38 61 21 9z m-795 -9 c10 -17 33 -41 52 -53 31 -20 44 -53 28 -70 -18 -17 -80 56 -102 121 -14 40 -2 42 22 2z m455 -451 c2 -19 -89 -25 -107 -7 -12 12 -16 50 -7 60 6 6 114 -44 114 -53z M1756 2888 c3 -29 10 -74 16 -100 18 -84 -14 -184 -83 -263 -24 -27 -36 -56 -51 -123 -10 -48 -52 -187 -93 -309 -87 -260 -102 -333 -86 -400 27 -104 44 -119 309 -253 295 -149 518 -281 685 -406 47 -36 47 -36 47 -5 0 57 -296 253 -687 453 -150 77 -241 130 -257 149 -54 64 -47 153 34 429 27 91 59 248 69 344 6 52 14 82 23 85 24 8 85 76 109 121 30 59 30 139 -1 243 -28 93 -41 107 -34 35z M695 2833 c16 -115 63 -189 232 -367 217 -230 220 -327 15 -514 -212 -193 -194 -173 -181 -209 11 -33 11 -33 160 108 168 160 205 210 221 298 21 114 -8 170 -176 341 -168 171 -256 298 -256 368 0 12 -5 22 -11 22 -8 0 -9 -15 -4 -47z M2461 2474 c-60 -176 -103 -236 -181 -249 -22 -4 -40 -10 -40 -15 0 -13 48 -16 158 -12 110 5 121 12 82 54 -30 32 -29 70 2 160 12 36 18 76 16 109 -3 53 -3 53 -37 -47z M399 1743 c-186 -196 -299 -417 -299 -588 0 -116 56 -270 117 -327 26 -23 26 -23 1 17 -142 230 -82 509 173 805 65 76 71 85 63 112 -9 29 -9 29 -55 -19z M1113 1159 c-38 -11 -38 -12 -18 -43 13 -20 21 -22 68 -18 134 11 549 -145 1010 -379 66 -33 121 -59 123 -57 2 3 -60 41 -139 85 -484 277 -922 449 -1044 412z M1450 683 c0 -5 17 -25 38 -45 36 -36 40 -37 182 -57 203 -28 223 -36 350 -146 129 -111 232 -189 358 -274 129 -86 122 -86 122 -5 -1 69 -1 69 -48 99 -71 45 -279 201 -347 261 -79 69 -153 93 -405 133 -107 17 -207 34 -222 37 -16 3 -28 2 -28 -3z"/></g>
+  </svg>
+</div>
+
+<!-- =========================== HEADER =========================== -->
+<header class="hdr" id="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="#pocetna" aria-label="Atelje — Reformer Pilates">
+      <span class="brand__name">Atelje</span>
+      <span class="brand__sub">Reformer Pilates</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Glavna navigacija">
+      <a href="#o-nama" data-en="About">O nama</a>
+      <a href="#casovi" data-en="Classes">Časovi</a>
+      <a href="#usluge" data-en="Services">Usluge</a>
+      <a href="#edukacije" data-en="Training">Edukacije</a>
+      <a href="#utisci" data-en="Reviews">Utisci</a>
+      <a href="#cenovnik" data-en="Pricing">Cenovnik</a>
+      <a href="#kontakt" data-en="Contact">Kontakt</a>
+      <a class="btn btn--sm" href="#kontakt" data-en="Book a class">Zakaži termin</a>
+    </nav>
+    <button class="lang" id="lang" type="button" aria-label="Jezik / Language">
+      <span data-lang="sr" class="is-on">SR</span><span data-lang="en">EN</span>
+    </button>
+    <button class="burger" id="burger" aria-label="Meni" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- =========================== ŠINA (potpis) =========================== -->
+<nav class="rail" id="rail" aria-label="Sekcije stranice">
+  <span class="rail__carriage" id="carriage"></span>
+  <a href="#pocetna"><span class="rail__dot"></span><span class="rail__name" data-en="Home">Početna</span></a>
+  <a href="#o-nama"><span class="rail__dot"></span><span class="rail__name" data-en="About">O nama</span></a>
+  <a href="#casovi"><span class="rail__dot"></span><span class="rail__name" data-en="Classes">Časovi</span></a>
+  <a href="#usluge"><span class="rail__dot"></span><span class="rail__name" data-en="Services">Usluge</span></a>
+  <a href="#edukacije"><span class="rail__dot"></span><span class="rail__name" data-en="Training">Edukacije</span></a>
+  <a href="#utisci"><span class="rail__dot"></span><span class="rail__name" data-en="Reviews">Utisci</span></a>
+  <a href="#cenovnik"><span class="rail__dot"></span><span class="rail__name" data-en="Pricing">Cenovnik</span></a>
+  <a href="#kontakt"><span class="rail__dot"></span><span class="rail__name" data-en="Contact">Kontakt</span></a>
+</nav>
+
+<main id="main">
+
+<!-- =========================== POČETNA =========================== -->
+<section class="sec hero" id="pocetna">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="rv">
+        <p class="eyebrow" data-en="Reformer pilates studio">Studio za reformer pilates</p>
+        <h1 data-en="Movement the body&lt;br&gt;remembers&lt;em&gt;Calm, precise, unhurried.&lt;/em&gt;">Pokret koji telo<br>pamti<em>Mirno, precizno, bez žurbe.</em></h1>
+        <p class="lede" data-en="Small reformer groups, a programme built around your body, and an instructor who watches you for the whole hour. No crowded mirrors, no race to the front.">Male grupe na reformeru, program prilagođen tvom telu i instruktor koji te gleda tokom celog časa. Bez ogledala punih ljudi i bez utrke ko će više.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#kontakt" data-en="Book a trial class">Zakaži probni čas</a>
+          <a class="btn btn--ghost" href="#casovi" data-en="See the classes">Pogledaj časove</a>
+        </div>
+        <div class="hero__meta">
+          <span data-en="Groups of up to 6">Grupe do 6 polaznika</span>
+          <span data-en="50-minute classes">Časovi 50 minuta</span>
+          <span data-en="Reformer and mat work">Rad na reformeru i strunjači</span>
+        </div>
+      </div>
+      <figure class="ph ph--tall rv">
+        <figcaption class="ph__label">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2.5" y="6" width="19" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l1.6-2.5h4.8L16 6"/></svg>
+          <b data-en="Photo">Fotografija</b>
+          <span data-en="Studio interior or a shot on the reformer&lt;br&gt;portrait · min. 1200×1500 px">Enterijer studija ili kadar sa reformera<br>vertikalno · min. 1200×1500 px</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== O NAMA =========================== -->
+<section class="sec sec--sand" id="o-nama">
+  <div class="wrap">
+    <div class="about">
+      <figure class="ph ph--square rv">
+        <figcaption class="ph__label">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2.5" y="6" width="19" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l1.6-2.5h4.8L16 6"/></svg>
+          <b data-en="Photo">Fotografija</b>
+          <span data-en="Instructor portrait or the team&lt;br&gt;square · min. 1200×1200 px">Portret instruktorke ili tim<br>kvadrat · min. 1200×1200 px</span>
+        </figcaption>
+      </figure>
+      <div class="about__text rv">
+        <p class="eyebrow" data-en="About">O nama</p>
+        <h2 data-en="A studio, not a gym">Atelje, a ne teretana</h2>
+        <p class="lede" style="margin-bottom:1.1em" data-en="Atelje is a small studio built on one idea: everyone who walks in gets a class shaped around their own body, not a programme copied off a list.">Atelje je mali studio otvoren sa jednostavnom idejom: da svako ko uđe dobije čas skrojen za svoje telo, a ne program prepisan sa spiska.</p>
+        <p data-en="We work in small groups because that is the only way an instructor can correct a pelvis, change a spring or slow the pace when it is needed. The space is quiet, bright and deliberately spare — everything in the room serves the practice.">Radimo u malim grupama jer je to jedini način da instruktor stigne da ispravi položaj karlice, promeni oprugu ili uspori tempo kada je potrebno. Prostor je tih, svetao i namerno bez viška — sve što se nalazi u sali služi vežbi.</p>
+        <p data-en="You are welcome whether you have never set foot on a reformer or have practised for years. The first class always begins with a conversation about what hurts, what interests you and how much time you realistically have.">Dobrodošli su i oni koji nikada nisu stali na reformer i oni koji godinama vežbaju. Prvi čas uvek počinje razgovorom o tome šta te boli, šta te zanima i koliko vremena realno imaš.</p>
+        <ul class="values">
+          <li><b data-en="Small groups">Male grupe</b><span data-en="A maximum of six people per class, with the instructor watching throughout.">Najviše šest polaznika po času, uz stalni nadzor instruktora.</span></li>
+          <li><b data-en="An individual approach">Individualan pristup</b><span data-en="Load and pace adapt to your level, not the other way round.">Opterećenje i tempo se prilagođavaju tvom nivou, ne obrnuto.</span></li>
+          <li><b data-en="Certified instructors">Sertifikovani instruktori</b><span data-en="Ongoing training and a proven methodology.">Kontinuirana edukacija i rad po proverenoj metodologiji.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== ČASOVI =========================== -->
+<section class="sec" id="casovi">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow" data-en="Classes">Časovi</p>
+      <h2 data-en="Choose the format that suits you">Odaberi format koji ti odgovara</h2>
+      <p class="lede" data-en="Every class runs 50 minutes. If you are not sure where to start, come for a trial class and we will find the right format together.">Svi časovi traju 50 minuta. Ako nisi siguran gde da počneš, dođi na probni čas — zajedno ćemo odrediti pravi format.</p>
+    </div>
+    <div class="classes rv">
+      <article class="class">
+        <div class="class__top"><span class="class__len">50 min</span></div>
+        <h3 data-en="Group reformer">Grupni reformer</h3>
+        <p data-en="A full reformer class in a group of up to six. Strength, stretch and breath control, with variations for every level.">Kompletan čas na reformeru u grupi do šest polaznika. Kombinacija snage, istezanja i kontrole daha, sa varijacijama za svaki nivo.</p>
+        <p class="class__for" data-en="All levels">Za sve nivoe</p>
+      </article>
+      <article class="class">
+        <div class="class__top"><span class="class__len">50 min</span></div>
+        <h3 data-en="Reformer for beginners">Reformer za početnike</h3>
+        <p data-en="An introductory cycle that walks you through the machine, the springs and the basic positions. Slower pace, more explanation.">Uvodni ciklus u kojem se upoznaješ sa mašinom, oprugama i osnovnim položajima. Sporiji tempo i više objašnjenja.</p>
+        <p class="class__for" data-en="First steps">Za prve korake</p>
+      </article>
+      <article class="class">
+        <div class="class__top"><span class="class__len">50 min</span></div>
+        <h3 data-en="Private class">Individualni čas</h3>
+        <p data-en="A full class devoted to you alone. The programme is built around your goals, your limits and your pace.">Ceo čas posvećen samo tebi. Program se pravi prema tvojim ciljevima, ograničenjima i tempu.</p>
+        <p class="class__for" data-en="Precision work">Za precizan rad</p>
+      </article>
+      <article class="class">
+        <div class="class__top"><span class="class__len">50 min</span></div>
+        <h3 data-en="Duo class">Duo čas</h3>
+        <p data-en="Two reformers, one instructor. The same attention as a private class, alongside someone you like training with.">Dva reformera, jedan instruktor. Ista pažnja kao na individualnom času, u društvu osobe sa kojom voliš da vežbaš.</p>
+        <p class="class__for" data-en="For two">Za dvoje</p>
+      </article>
+      <article class="class">
+        <div class="class__top"><span class="class__len">50 min</span></div>
+        <h3 data-en="Mat pilates">Mat pilates</h3>
+        <p data-en="Mat work with small props. A strong complement to the reformer and a good way to build the deep muscular corset.">Rad na strunjači uz male rekvizite. Odlična dopuna reformeru i dobar način da se osnaži dubinski mišićni korset.</p>
+        <p class="class__for" data-en="All levels">Za sve nivoe</p>
+      </article>
+      <article class="class">
+        <div class="class__top"><span class="class__len">50 min</span></div>
+        <h3>Stretch &amp; Release</h3>
+        <p data-en="A calmer class focused on mobility, stretching and release. Ideal after a hard day or a heavy training session.">Mirniji čas usmeren na mobilnost, istezanje i opuštanje. Idealan posle napornog radnog dana ili treninga.</p>
+        <p class="class__for" data-en="Recovery">Za oporavak</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== USLUGE =========================== -->
+<section class="sec sec--sand" id="usluge">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow" data-en="Services">Usluge</p>
+      <h2 data-en="Programmes beyond the regular schedule">Programi izvan redovnog rasporeda</h2>
+      <p class="lede" data-en="Alongside the classes we run programmes for specific situations — from returning to form after birth to posture correction for people who sit all day.">Pored časova, radimo i programe koji prate određenu situaciju — od povratka u formu posle porođaja do korekcije držanja kod ljudi koji sede po ceo dan.</p>
+    </div>
+    <div class="services rv">
+      <article class="service">
+        <h3 data-en="Postural assessment">Procena držanja tela</h3>
+        <p data-en="An introductory analysis of posture and movement, with a written report and a proposed programme. We recommend it before you begin.">Uvodna analiza posture i pokreta, sa pisanim nalazom i predlogom programa. Preporučujemo je pre početka rada.</p>
+      </article>
+      <article class="service">
+        <h3 data-en="Posture correction programme">Program za korekciju posture</h3>
+        <p data-en="A cycle of classes for people who sit all day — back, shoulders and neck, step by step.">Ciklus časova za one koji sede po ceo dan — rad na leđima, ramenima i vratu, korak po korak.</p>
+      </article>
+      <article class="service">
+        <h3 data-en="Prenatal pilates">Pilates za trudnice</h3>
+        <p data-en="An adapted programme through all three trimesters, with your doctor&#x27;s clearance. Focused on breath, pelvis and stability.">Prilagođen program kroz sve trimestre, uz saglasnost lekara. Fokus na disanju, karlici i stabilnosti.</p>
+      </article>
+      <article class="service">
+        <h3 data-en="Postnatal recovery">Postporođajni oporavak</h3>
+        <p data-en="A gradual return to strength, with particular care for the deep abdominal wall and the pelvic floor.">Postepen povratak snazi, sa posebnom pažnjom na dubinski trbušni zid i dno karlice.</p>
+      </article>
+      <article class="service">
+        <h3 data-en="Pilates for athletes">Pilates za sportiste</h3>
+        <p data-en="A complement to training — mobility, joint stability and injury prevention through controlled movement.">Dopuna treningu — mobilnost, stabilnost zgloba i prevencija povreda kroz kontrolisan pokret.</p>
+      </article>
+      <article class="service">
+        <h3 data-en="Private groups and companies">Zatvorene grupe i firme</h3>
+        <p data-en="A slot reserved for your own circle, team or company. Scheduling by arrangement.">Termin rezervisan samo za tvoje društvo, tim ili kolektiv. Dogovor o rasporedu po zahtevu.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== EDUKACIJE =========================== -->
+<section class="sec" id="edukacije">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow" data-en="Training">Edukacije</p>
+      <h2 data-en="Reformer pilates instructor training">Škola za instruktore reformer pilatesa</h2>
+      <p class="lede" data-en="A programme for those who want to teach, and for practitioners who want to understand what happens in the body during every movement.">Program namenjen onima koji žele da predaju, ali i vežbačima koji žele da razumeju šta se dešava u telu tokom svakog pokreta.</p>
+    </div>
+    <div class="edu">
+      <div class="rv">
+        <ol class="modules">
+          <li>
+            <div>
+              <h3 data-en="Anatomy in movement">Anatomija u pokretu</h3>
+              <p data-en="Functional anatomy, the spine, the pelvis and breath as the foundation of every pilates movement.">Osnove funkcionalne anatomije, kičmeni stub, karlica i disanje kao temelj svakog pilates pokreta.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3 data-en="The reformer repertoire">Reformer — repertoar</h3>
+              <p data-en="A systematic pass through the exercises, spring work, modifications and progressions for different levels.">Sistematski prolazak kroz vežbe, rad sa oprugama, modifikacije i progresije za različite nivoe.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3 data-en="Teaching a class">Vođenje časa</h3>
+              <p data-en="Class structure, verbal and tactile cueing, pace, and working with a group of mixed ability.">Struktura časa, verbalne i taktilne korekcije, tempo i rad sa grupom različitih sposobnosti.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3 data-en="Practice and certification">Praksa i sertifikacija</h3>
+              <p data-en="Supervised practice hours in the studio, a final examination and certification.">Sati prakse u studiju pod nadzorom mentora, završni ispit i sertifikat.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="note" data-en="Next course date: &lt;em class=&quot;tbd&quot;&gt;date — to be added&lt;/em&gt; · Places are limited.">Naredni termin obuke: <em class="tbd">datum — dopuniti</em> · Broj mesta je ograničen.</p>
+        <p style="margin-top:22px"><a class="btn" href="#kontakt" data-en="Apply for the training">Prijavi se za edukaciju</a></p>
+      </div>
+      <figure class="ph ph--tall rv">
+        <figcaption class="ph__label">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2.5" y="6" width="19" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l1.6-2.5h4.8L16 6"/></svg>
+          <b data-en="Photo">Fotografija</b>
+          <span data-en="A shot from a course or a group of trainees&lt;br&gt;portrait · min. 1200×1500 px">Kadar sa edukacije ili grupe polaznika<br>vertikalno · min. 1200×1500 px</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================== UTISCI =========================== -->
+<!-- TODO: prepisati prave recenzije sa Google profila i staviti pravi link ispod. -->
+<section class="sec sec--sand" id="utisci">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow" data-en="Reviews">Utisci</p>
+      <h2 data-en="What our clients say">Šta kažu klijentkinje</h2>
+      <p class="lede" data-en="The reviews below are taken from our Google profile, in full and unedited.">Recenzije su preuzete sa našeg Google profila, u celosti i bez skraćivanja.</p>
+    </div>
+
+    <div class="quotes rv">
+      <figure class="quote">
+        <span class="quote__mark" aria-hidden="true">&rdquo;</span>
+        <blockquote><p data-en="First review, transcribed from Google. Leave it exactly as written, typos included — that is what makes it read as real.">Ovde ide prva recenzija prepisana sa Google-a. Ostavi je u originalnom obliku, sa slovnim greškama i svime — tako zvuči verodostojno.</p></blockquote>
+        <figcaption class="quote__by"><b class="tbd" data-en="Full name">Ime i prezime</b><span data-en="Google review · ">Google recenzija · </span><span class="tbd" data-en="month year">mesec godina</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="quote__mark" aria-hidden="true">&rdquo;</span>
+        <blockquote><p data-en="Second review. The ones that work best mention something concrete — the instructor&#x27;s name, how small the group is, how the back pain stopped.">Druga recenzija. Najbolje rade one koje pominju konkretnu stvar — ime instruktorke, koliko je grupa mala, kako su leđa prestala da bole.</p></blockquote>
+        <figcaption class="quote__by"><b class="tbd" data-en="Full name">Ime i prezime</b><span data-en="Google review · ">Google recenzija · </span><span class="tbd" data-en="month year">mesec godina</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="quote__mark" aria-hidden="true">&rdquo;</span>
+        <blockquote><p data-en="Third review. If there are more than three, add another block — the grid wraps into two rows on its own.">Treća recenzija. Ako ih ima više od tri, dodaj još jedan blok — mreža se sama prelama u dva reda.</p></blockquote>
+        <figcaption class="quote__by"><b class="tbd" data-en="Full name">Ime i prezime</b><span data-en="Google review · ">Google recenzija · </span><span class="tbd" data-en="month year">mesec godina</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="quotes__foot rv">
+      <p class="rating" data-en="&lt;b class=&quot;tbd&quot;&gt;0.0&lt;/b&gt; / 5 &amp;middot; &lt;span class=&quot;tbd&quot;&gt;00 reviews&lt;/span&gt; on Google"><b class="tbd">0,0</b> / 5 &middot; <span class="tbd">00 recenzija</span> na Google-u</p>
+      <a class="btn btn--ghost" href="#" rel="noopener" data-en="Read all reviews on Google">Pročitaj sve na Google-u</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CENOVNIK =========================== -->
+<section class="sec" id="cenovnik">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow" data-en="Pricing">Cenovnik</p>
+      <h2 data-en="Clear prices, no small print">Jasne cene, bez sitnih slova</h2>
+      <p class="lede" data-en="Packages are valid for 60 days from your first class. Cancellations at least 12 hours in advance.">Paketi važe 60 dana od prvog dolaska. Termin se otkazuje najkasnije 12 sati ranije.</p>
+    </div>
+    <div class="prices rv">
+      <article class="price">
+        <span class="price__name" data-en="Trial class">Probni čas</span>
+        <span class="price__note" data-en="First visit, with a short consultation">Prvi dolazak, uz kratak razgovor</span>
+        <span class="price__amt"><em class="tbd">0.000</em> <small>RSD</small></span>
+      </article>
+      <article class="price">
+        <span class="price__name" data-en="Single class">Pojedinačni čas</span>
+        <span class="price__note" data-en="Group reformer, 50 minutes">Grupni reformer, 50 minuta</span>
+        <span class="price__amt"><em class="tbd">0.000</em> <small>RSD</small></span>
+      </article>
+      <article class="price price--pick">
+        <span class="price__name" data-en="8-class package">Paket 8 časova</span>
+        <span class="price__note" data-en="Most popular · twice a week">Najčešći izbor · dva puta nedeljno</span>
+        <span class="price__amt"><em class="tbd">00.000</em> <small>RSD</small></span>
+      </article>
+      <article class="price">
+        <span class="price__name" data-en="12-class package">Paket 12 časova</span>
+        <span class="price__note" data-en="Three times a week">Tri puta nedeljno</span>
+        <span class="price__amt"><em class="tbd">00.000</em> <small>RSD</small></span>
+      </article>
+      <article class="price">
+        <span class="price__name" data-en="Private class">Individualni čas</span>
+        <span class="price__note" data-en="One to one with an instructor">Jedan na jedan sa instruktorom</span>
+        <span class="price__amt"><em class="tbd">0.000</em> <small>RSD</small></span>
+      </article>
+      <article class="price">
+        <span class="price__name" data-en="Duo class">Duo čas</span>
+        <span class="price__note" data-en="Price per person">Cena po osobi</span>
+        <span class="price__amt"><em class="tbd">0.000</em> <small>RSD</small></span>
+      </article>
+    </div>
+    <p class="note" data-en="Training fees and payment terms on request. Payment by cash or card at the studio.">Cena edukacije i uslova plaćanja na upit. Plaćanje gotovinom ili karticom u studiju.</p>
+  </div>
+</section>
+
+<!-- =========================== KONTAKT =========================== -->
+<section class="sec sec--sand" id="kontakt">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow" data-en="Contact">Kontakt</p>
+      <h2 data-en="Come for a trial class">Dođi na probni čas</h2>
+      <p class="lede" data-en="Leave a message and we will come back to you the same day with available times.">Ostavi poruku i javljamo se istog dana sa slobodnim terminima.</p>
+    </div>
+    <div class="contact">
+      <div class="rv">
+        <ul class="info">
+          <li><b data-en="Address">Adresa</b><span class="tbd" data-en="street and number, city — to be added">ulica i broj, grad — dopuniti</span></li>
+          <li><b data-en="Phone">Telefon</b><span class="tbd" data-en="+381 00 000 0000 — to be added">+381 00 000 0000 — dopuniti</span></li>
+          <li><b>E-mail</b><a href="mailto:info@reformeratelje.com">info@reformeratelje.com</a></li>
+          <li><b data-en="Opening hours">Radno vreme</b><span class="tbd" data-en="Mon–Fri 00–00 · Sat 00–00 — to be added">pon–pet 00–00 · sub 00–00 — dopuniti</span></li>
+          <li><b>Instagram</b><span class="tbd" data-en="@username — to be added">@korisničko ime — dopuniti</span></li>
+        </ul>
+        <div class="map" data-en="Google map&lt;br&gt;to be embedded once the address is provided">Google mapa<br>ubacuje se po dostavljenoj adresi</div>
+      </div>
+
+      <form class="form rv" id="form" novalidate>
+        <div class="form__body">
+          <div class="row">
+            <div class="field">
+              <label for="ime" data-en="Full name">Ime i prezime</label>
+              <input id="ime" name="ime" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="tel" data-en="Phone">Telefon</label>
+              <input id="tel" name="telefon" type="tel" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="interes" data-en="What are you interested in">Šta te zanima</label>
+            <select id="interes" name="interes">
+              <option data-en="Trial class">Probni čas</option>
+              <option data-en="Group reformer">Grupni reformer</option>
+              <option data-en="Private class">Individualni čas</option>
+              <option data-en="Duo class">Duo čas</option>
+              <option data-en="A programme (posture, prenatal, recovery)">Program (postura, trudnice, oporavak)</option>
+              <option data-en="Instructor training">Edukacija za instruktore</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="poruka" data-en="Message">Poruka</label>
+            <textarea id="poruka" name="poruka" rows="4" placeholder="Da li si ranije vežbao/la pilates, kada ti termini najviše odgovaraju…" data-en-ph="Have you practised pilates before, and which times suit you best…"></textarea>
+          </div>
+          <div class="form__foot">
+            <button class="btn" type="submit" data-en="Send message">Pošalji poruku</button>
+            <p class="form__note" data-en="Your details are used only to answer your enquiry.">Podaci se koriste isključivo za odgovor na upit.</p>
+          </div>
+        </div>
+        <p class="form__ok" data-en="Thank you for your message. We will be in touch shortly with available times.">Hvala na poruci. Javljamo se u najkraćem roku sa slobodnim terminima.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="ftr">
+  <div class="ftr__in">
+    <a class="lockup" href="#pocetna" aria-label="Atelje — Reformer Pilates">
+      <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="616 88" transform="rotate(245 120 120)"/><g transform="translate(52,50) scale(0.29) translate(0,476) scale(0.1,-0.1)" fill="currentColor"><path d="M1140 4636 c-150 -45 -181 -67 -226 -159 -39 -79 -40 -85 -36 -160 4 -71 6 -78 23 -74 11 3 17 1 13 -4 -3 -5 -1 -9 5 -9 5 0 13 5 16 10 4 6 16 8 27 4 20 -6 20 -3 16 62 -7 95 17 143 70 144 28 0 28 0 -5 -59 -23 -41 -25 -51 -14 -65 17 -20 51 -4 51 24 0 15 15 27 53 44 50 22 81 50 118 106 20 31 8 35 371 -143 329 -163 300 -128 240 -282 -41 -109 -35 -101 -65 -71 -14 14 -37 28 -51 32 -21 5 -25 12 -24 37 2 61 -33 122 -110 192 -122 110 -304 136 -447 66 -72 -36 -168 -126 -186 -175 -13 -35 -13 -35 -38 -17 -72 51 -135 70 -175 55 -29 -11 -16 -23 24 -22 43 0 100 -19 100 -33 0 -5 -4 -9 -8 -9 -4 0 -16 -13 -25 -30 -15 -25 -24 -30 -57 -28 -71 2 -98 -17 -118 -86 -10 -33 -15 -63 -11 -66 6 -4 39 -77 39 -86 0 -2 -9 -4 -19 -4 -20 0 -30 17 -32 53 -1 16 -4 12 -10 -11 -13 -42 2 -62 45 -62 19 0 42 -10 61 -26 30 -26 30 -26 -10 -22 -22 3 -46 7 -53 9 -8 2 -23 -8 -34 -23 -21 -27 -21 -27 0 -75 23 -51 30 -42 10 13 -17 47 2 67 56 59 61 -9 176 33 195 71 15 29 15 29 26 -16 16 -62 31 -88 76 -135 39 -41 39 -41 28 -100 -43 -231 -111 -310 -334 -385 -168 -56 -195 -76 -195 -142 0 -43 0 -43 19 -12 27 45 67 70 167 105 175 61 253 116 307 217 35 65 67 177 67 237 0 40 3 45 23 45 12 0 33 9 47 20 20 16 21 19 5 14 -11 -4 -25 -11 -32 -16 -14 -11 -25 5 -17 26 3 9 16 16 28 17 11 0 15 3 9 6 -24 9 -13 23 15 18 27 -6 27 -6 0 10 -69 39 42 85 131 54 17 -6 31 -14 31 -18 0 -12 145 5 200 25 75 26 165 116 183 181 15 58 33 65 69 25 34 -39 35 -62 3 -127 -24 -50 -24 -50 -26 30 -2 80 -2 80 -9 8 -5 -55 -15 -89 -44 -145 -31 -61 -37 -85 -39 -143 -3 -60 -6 -70 -22 -74 -23 -4 -50 -31 -106 -107 -23 -32 -47 -54 -58 -54 -35 0 -170 99 -177 128 -20 97 -31 128 -51 148 -27 27 -29 60 -7 92 9 13 11 22 4 22 -33 0 -37 -104 -5 -130 32 -26 53 -172 36 -237 -6 -22 -33 -70 -59 -106 -190 -256 -126 -534 174 -762 43 -33 81 -63 82 -68 8 -16 42 -28 36 -12 -4 8 -10 15 -14 15 -9 0 -174 142 -208 180 -45 48 -100 141 -122 203 -23 68 -39 197 -23 197 5 0 7 15 5 33 -5 40 34 131 81 190 36 44 67 114 67 148 0 12 5 19 13 16 6 -2 10 -13 8 -23 -16 -85 4 -115 82 -122 88 -7 121 9 146 71 24 59 92 137 134 155 24 10 28 16 23 40 -8 33 43 145 72 161 35 19 62 75 68 142 3 35 17 98 30 139 39 123 56 210 45 224 -39 47 -378 219 -553 280 -71 25 -118 28 -118 7 0 -18 -49 -62 -105 -93 -33 -19 -64 -44 -70 -56 -5 -12 -13 -22 -17 -22 -16 0 -7 32 16 63 47 65 42 81 -23 71 -59 -9 -86 -55 -77 -130 3 -30 2 -54 -3 -54 -9 0 -21 57 -21 103 0 18 -4 26 -11 22 -9 -6 -7 -55 7 -127 6 -32 -14 -29 -25 4 -25 78 -23 99 22 177 41 72 44 74 107 97 151 54 239 64 375 40 330 -59 637 -162 699 -237 77 -91 -18 -460 -246 -954 -99 -216 -140 -357 -137 -475 1 -45 1 -45 11 0 30 148 44 193 99 317 161 360 203 462 253 620 82 263 101 443 53 506 -72 94 -334 191 -682 252 -170 30 -228 31 -325 1z m242 -305 c120 -20 225 -97 279 -203 36 -71 36 -72 -2 -141 -105 -195 -297 -239 -547 -124 -68 31 -68 31 -52 14 8 -9 42 -29 75 -46 33 -17 51 -31 41 -31 -10 0 -31 -14 -47 -31 -29 -31 -29 -31 -94 31 -35 35 -74 82 -86 106 -23 48 -35 57 -25 21 7 -29 -15 -62 -37 -54 -35 13 -33 116 3 155 11 12 20 28 20 37 0 8 7 15 15 15 11 0 15 -11 15 -37 0 -31 2 -34 13 -22 20 25 241 177 288 199 25 11 68 20 99 21 47 1 51 2 27 9 -74 22 -200 -28 -324 -129 -74 -60 -77 -55 -22 28 65 97 155 159 262 180 23 5 42 9 42 10 0 0 25 -3 57 -8z m-434 -228 c2 -7 -4 -13 -13 -13 -18 0 -72 -35 -93 -60 -23 -27 -11 -158 16 -181 13 -10 30 -15 37 -12 22 8 19 -24 -2 -36 -34 -18 -116 -25 -111 -10 3 8 13 16 24 17 47 9 36 23 -12 17 -46 -7 -53 -5 -68 16 -26 38 -21 52 14 34 48 -25 58 -17 13 10 -92 55 -56 168 53 170 34 0 46 6 69 33 28 33 64 41 73 15z m851 -304 c-13 -37 -27 -59 -39 -59 -4 0 4 23 18 50 28 57 38 61 21 9z m-795 -9 c10 -17 33 -41 52 -53 31 -20 44 -53 28 -70 -18 -17 -80 56 -102 121 -14 40 -2 42 22 2z m455 -451 c2 -19 -89 -25 -107 -7 -12 12 -16 50 -7 60 6 6 114 -44 114 -53z M1756 2888 c3 -29 10 -74 16 -100 18 -84 -14 -184 -83 -263 -24 -27 -36 -56 -51 -123 -10 -48 -52 -187 -93 -309 -87 -260 -102 -333 -86 -400 27 -104 44 -119 309 -253 295 -149 518 -281 685 -406 47 -36 47 -36 47 -5 0 57 -296 253 -687 453 -150 77 -241 130 -257 149 -54 64 -47 153 34 429 27 91 59 248 69 344 6 52 14 82 23 85 24 8 85 76 109 121 30 59 30 139 -1 243 -28 93 -41 107 -34 35z M695 2833 c16 -115 63 -189 232 -367 217 -230 220 -327 15 -514 -212 -193 -194 -173 -181 -209 11 -33 11 -33 160 108 168 160 205 210 221 298 21 114 -8 170 -176 341 -168 171 -256 298 -256 368 0 12 -5 22 -11 22 -8 0 -9 -15 -4 -47z M2461 2474 c-60 -176 -103 -236 -181 -249 -22 -4 -40 -10 -40 -15 0 -13 48 -16 158 -12 110 5 121 12 82 54 -30 32 -29 70 2 160 12 36 18 76 16 109 -3 53 -3 53 -37 -47z M399 1743 c-186 -196 -299 -417 -299 -588 0 -116 56 -270 117 -327 26 -23 26 -23 1 17 -142 230 -82 509 173 805 65 76 71 85 63 112 -9 29 -9 29 -55 -19z M1113 1159 c-38 -11 -38 -12 -18 -43 13 -20 21 -22 68 -18 134 11 549 -145 1010 -379 66 -33 121 -59 123 -57 2 3 -60 41 -139 85 -484 277 -922 449 -1044 412z M1450 683 c0 -5 17 -25 38 -45 36 -36 40 -37 182 -57 203 -28 223 -36 350 -146 129 -111 232 -189 358 -274 129 -86 122 -86 122 -5 -1 69 -1 69 -48 99 -71 45 -279 201 -347 261 -79 69 -153 93 -405 133 -107 17 -207 34 -222 37 -16 3 -28 2 -28 -3z"/></g></svg>
+      <span class="lockup__type">
+        <span class="lockup__name">Atelje</span>
+        <span class="lockup__sub">Reformer Pilates</span>
+      </span>
+    </a>
+    <div class="ftr__cols">
+      <a href="#casovi" data-en="Classes">Časovi</a>
+      <a href="#usluge" data-en="Services">Usluge</a>
+      <a href="#edukacije" data-en="Training">Edukacije</a>
+      <a href="#utisci" data-en="Reviews">Utisci</a>
+      <a href="#cenovnik" data-en="Pricing">Cenovnik</a>
+      <a href="#kontakt" data-en="Contact">Kontakt</a>
+      <span class="ftr__legal">© <span id="god">2026</span> Atelje · Reformer Pilates</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* godina */
+  document.getElementById("god").textContent = new Date().getFullYear();
+
+  /* mobilni meni */
+  var hdr = document.getElementById("hdr");
+  var burger = document.getElementById("burger");
+  burger.addEventListener("click", function(){
+    var open = hdr.classList.toggle("is-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.getElementById("nav").addEventListener("click", function(e){
+    if(e.target.closest("a")){
+      hdr.classList.remove("is-open");
+      burger.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* linija ispod headera pri skrolu */
+  var onScroll = function(){
+    hdr.classList.toggle("is-stuck", window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* aktivna sekcija: header nav + šina */
+  var ids = ["pocetna","o-nama","casovi","usluge","edukacije","utisci","cenovnik","kontakt"];
+  var railLinks = Array.prototype.slice.call(document.querySelectorAll("#rail a"));
+  var navLinks  = Array.prototype.slice.call(document.querySelectorAll("#nav a[href^='#']"));
+  var carriage  = document.getElementById("carriage");
+
+  function setActive(id){
+    railLinks.forEach(function(a){
+      var on = a.getAttribute("href") === "#" + id;
+      if(on){ a.setAttribute("aria-current","true"); } else { a.removeAttribute("aria-current"); }
+      if(on && carriage){
+        var top = a.offsetTop + (a.offsetHeight - carriage.offsetHeight)/2;
+        carriage.style.transform = "translateY(" + top + "px)";
+      }
+    });
+    navLinks.forEach(function(a){
+      if(a.classList.contains("btn")) return;
+      if(a.getAttribute("href") === "#" + id){ a.setAttribute("aria-current","true"); }
+      else { a.removeAttribute("aria-current"); }
+    });
+  }
+
+  if("IntersectionObserver" in window){
+    var seen = {};
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ seen[en.target.id] = en.intersectionRatio; });
+      var best = null, bestRatio = 0;
+      ids.forEach(function(id){
+        if((seen[id] || 0) > bestRatio){ bestRatio = seen[id]; best = id; }
+      });
+      if(best) setActive(best);
+    }, {threshold:[0,.15,.35,.6,.9], rootMargin:"-20% 0px -35% 0px"});
+    ids.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) spy.observe(el);
+    });
+
+    /* pojavljivanje sadržaja */
+    var rv = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("is-in"); rv.unobserve(en.target); }
+      });
+    }, {threshold:.12, rootMargin:"0px 0px -8% 0px"});
+    document.querySelectorAll(".rv").forEach(function(el){ rv.observe(el); });
+  } else {
+    document.querySelectorAll(".rv").forEach(function(el){ el.classList.add("is-in"); });
+  }
+
+  setActive("pocetna");
+  window.addEventListener("resize", function(){
+    var cur = document.querySelector("#rail a[aria-current='true']");
+    if(cur) setActive(cur.getAttribute("href").slice(1));
+  });
+
+  /* skica se "crta" odozgo nadole kroz ceo landing */
+  var sketch = document.getElementById("sketch");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(sketch){
+    var svg = sketch.querySelector("svg");
+    if(reduce){
+      svg.style.clipPath = "inset(0 0 0 0)";
+    } else {
+      var ticking = false;
+      var draw = function(){
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 1;
+        var shown = 12 + 88 * p;           /* na vrhu se vidi samo glava i ruke */
+        svg.style.clipPath = "inset(0 0 " + (100 - shown).toFixed(2) + "% 0)";
+        ticking = false;
+      };
+      window.addEventListener("scroll", function(){
+        if(!ticking){ ticking = true; requestAnimationFrame(draw); }
+      }, {passive:true});
+      window.addEventListener("resize", draw, {passive:true});
+      draw();
+    }
+  }
+
+  /* ---------- SR / EN ---------- */
+  var META = {
+    sr: {
+      title:"Atelje — Reformer Pilates",
+      desc:"Atelje — studio za reformer pilates. Grupni i individualni časovi, programi za držanje tela i edukacije za instruktore."
+    },
+    en: {
+      title:"Atelje — Reformer Pilates Studio",
+      desc:"Atelje — a reformer pilates studio. Group and private classes, posture programmes and instructor training."
+    }
+  };
+  var langBtn = document.getElementById("lang");
+  var descTag = document.querySelector('meta[name="description"]');
+
+  function setLang(l){
+    document.documentElement.lang = l;
+    document.querySelectorAll("[data-en]").forEach(function(el){
+      if(typeof el.dataset.sr === "undefined"){ el.dataset.sr = el.innerHTML; }
+      el.innerHTML = (l === "en") ? el.dataset.en : el.dataset.sr;
+    });
+    document.querySelectorAll("[data-en-ph]").forEach(function(el){
+      if(typeof el.dataset.srPh === "undefined"){ el.dataset.srPh = el.getAttribute("placeholder") || ""; }
+      el.setAttribute("placeholder", (l === "en") ? el.dataset.enPh : el.dataset.srPh);
+    });
+    document.title = META[l].title;
+    if(descTag){ descTag.setAttribute("content", META[l].desc); }
+    langBtn.querySelectorAll("span").forEach(function(sp){
+      sp.classList.toggle("is-on", sp.getAttribute("data-lang") === l);
+    });
+    try{ localStorage.setItem("atelje-lang", l); }catch(e){}
+  }
+
+  langBtn.addEventListener("click", function(){
+    setLang(document.documentElement.lang === "en" ? "sr" : "en");
+  });
+
+  var saved = null;
+  try{ saved = localStorage.getItem("atelje-lang"); }catch(e){}
+  if(!saved && (navigator.language || "").slice(0,2) !== "sr"){ saved = "en"; }
+  setLang(saved === "en" ? "en" : "sr");
+
+  /* forma — TODO: povezati na endpoint (Formspree / PHP mailer / Web3Forms)
+     Trenutno samo prikazuje potvrdu, bez slanja. */
+  var form = document.getElementById("form");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var req = form.querySelectorAll("[required]");
+    for(var i=0;i<req.length;i++){
+      if(!req[i].value.trim()){ req[i].focus(); return; }
+    }
+    form.classList.add("is-sent");
+  });
+})();
+</script>
+</body>
+</html>
