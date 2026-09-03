@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atelje — Reformer Pilates</title>
+<title>Atelje — Pilates &amp; Wellness</title>
 <meta name="description" content="Atelje — studio za reformer pilates. Grupni i individualni časovi, programi za držanje tela i edukacije za instruktore.">
 <!-- PREVIEW: ukloniti pre puštanja na reformeratelje.com -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#FBF8F4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23534135'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='21' fill='%23E2CDB8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22275%20286%20664%20718%22%3E%3Crect%20x%3D%22275%22%20y%3D%22286%22%20width%3D%22664%22%20height%3D%22718%22%20fill%3D%22%235C4E44%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23DCC5A6%22%20stroke-width%3D%2234%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M394%2C629%20V343%20A317%2C323%200%200%201%20711%2C666%22%2F%3E%3Cpath%20d%3D%22M607.8%2C306.0%20A329.3%2C368.3%200%200%201%20833%2C655.4%20V984%22%2F%3E%3Cpath%20d%3D%22M295%2C695%20H919%22%2F%3E%3Cpath%20d%3D%22M711%2C695%20V984%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22394%22%20cy%3D%22797%22%20r%3D%2230%22%20fill%3D%22%23DCC5A6%22%2F%3E%3C%2Fsvg%3E">
 
 <!-- Open Graph — dopuniti pravim URL-om i slikom kada bude spremna -->
-<meta property="og:title" content="Atelje — Reformer Pilates">
+<meta property="og:title" content="Atelje — Pilates &amp; Wellness">
 <meta property="og:description" content="Studio za reformer pilates. Grupni i individualni časovi, programi i edukacije.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://reformeratelje.com/">
@@ -19,7 +19,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
@@ -34,8 +34,8 @@
   --espresso:#3B2E24;    /* naslovi, primarni tekst */
 
   /* uzorkovano direktno iz logotipa */
-  --brand:#534135;       /* braon podloga logotipa */
-  --brand-line:#E2CDB8;  /* krem linija logotipa */
+  --brand:#5C4E44;       /* braon podloga logotipa */
+  --brand-line:#DCC5A6;  /* krem linija logotipa */
 
   --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --body:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
@@ -122,24 +122,36 @@ p:last-child{margin-bottom:0}
   transition:border-color .3s var(--ease),background .3s var(--ease);
 }
 .hdr.is-stuck{border-bottom-color:var(--latte)}
+.hdr::after{
+  content:"";
+  position:absolute;left:0;bottom:-1px;height:1px;
+  width:var(--prog,0%);
+  background:var(--espresso);
+  opacity:.45;
+  transition:width .12s linear;
+}
 .hdr__in{
   max-width:var(--max);margin-inline:auto;
   padding:16px var(--gutter);
   display:flex;align-items:center;gap:24px;
 }
 .brand{
-  display:grid;gap:3px;
+  display:flex;align-items:center;gap:12px;
   text-decoration:none;line-height:1;
   margin-right:auto;white-space:nowrap;
 }
+.brand .mark{width:30px;height:32px;flex:none;color:var(--espresso)}
+.brand__type{display:grid;gap:5px}
 .brand__name{
-  font-family:var(--display);
-  font-size:27px;font-weight:500;letter-spacing:.015em;
+  font-size:22px;font-weight:200;letter-spacing:.13em;
+  text-transform:none;
 }
 .brand__sub{
-  font-size:8.5px;letter-spacing:.32em;text-transform:uppercase;
+  font-size:8px;letter-spacing:.3em;text-transform:uppercase;
   color:var(--cocoa);font-weight:400;
 }
+.mark path{stroke-width:15;vector-effect:non-scaling-stroke}
+.brand .mark path{stroke-width:1.3}
 .nav{display:flex;align-items:center;gap:clamp(14px,1.8vw,28px)}
 .nav a:not(.btn){
   text-decoration:none;
@@ -212,66 +224,20 @@ p:last-child{margin-bottom:0}
 .hdr.is-open .burger span:nth-child(2){opacity:0}
 .hdr.is-open .burger span:nth-child(3){transform:translateY(-3px) rotate(-45deg)}
 
-/* ---------- rail: potpis stranice (šina i nosač reformera) ---------- */
-.rail{
-  position:fixed;
-  right:clamp(18px,2.4vw,38px);
-  top:50%;transform:translateY(-50%);
-  z-index:40;
-  display:grid;
-}
-.rail::before{
-  content:"";
-  position:absolute;left:5px;top:6px;bottom:6px;
-  width:1px;background:var(--latte);
-}
-.rail__carriage{
-  position:absolute;left:0;top:0;
-  width:11px;height:18px;
-  border:1px solid var(--espresso);
-  border-radius:3px;
-  background:var(--porcelain);
-  transition:transform .45s var(--ease);
-  pointer-events:none;
-}
-.rail a{
-  display:flex;align-items:center;gap:12px;
-  padding:7px 0;
-  text-decoration:none;
-  position:relative;
-}
-.rail__dot{width:11px;height:1px;background:var(--latte);flex:none;transition:background .3s var(--ease)}
-.rail a[aria-current="true"] .rail__dot{background:transparent}
-.rail__name{
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--cocoa);
-  opacity:0;transform:translateX(-6px);
-  transition:opacity .3s var(--ease),transform .3s var(--ease);
-  white-space:nowrap;
-}
-.rail:hover .rail__name,.rail a:focus-visible .rail__name{opacity:1;transform:none}
 
 /* ---------- skica iz logotipa: prati ceo landing u levoj zoni ---------- */
 .sketch{
   position:fixed;
-  left:clamp(-78px,-3.2vw,-10px);
+  left:clamp(6px,1.4vw,26px);
   top:50%;transform:translateY(-50%);
-  width:clamp(210px,18vw,300px);
+  width:clamp(200px,16vw,270px);
   z-index:6;
   pointer-events:none;
   color:var(--espresso);
-  opacity:.09;
+  opacity:.2;
 }
-.sketch svg{
-  display:block;width:100%;height:auto;
-  fill:currentColor;
-  clip-path:inset(0 0 88% 0);
-  will-change:clip-path;
-}
-.sketch__rule{
-  position:absolute;left:50%;top:-6vh;bottom:-6vh;
-  width:1px;background:currentColor;opacity:.35;
-}
+.sketch .figure{display:block;width:100%;height:auto}
+.sketch .figure path{stroke-width:1.8}
 
 /* ---------- hero ---------- */
 .hero{
@@ -621,29 +587,78 @@ p:last-child{margin-bottom:0}
 .ftr{
   background:var(--brand);
   color:var(--brand-line);
-  padding-block:clamp(56px,7vw,86px);
+  padding-block:clamp(32px,3.6vw,46px);
   font-size:13px;
   position:relative;z-index:7;
 }
 .ftr__in{
   max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter);
-  display:grid;grid-template-columns:auto 1fr;gap:clamp(30px,5vw,64px);align-items:center;
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,2.6vw,40px);align-items:center;
 }
-.lockup{display:flex;align-items:center;gap:20px}
-.lockup svg{width:clamp(96px,10vw,124px);height:auto;flex:none}
-.lockup__type{display:grid;gap:6px;line-height:1}
-.lockup__name{font-family:var(--display);font-size:clamp(34px,4vw,46px);font-weight:500;letter-spacing:.015em}
-.lockup__sub{font-size:10px;letter-spacing:.34em;text-transform:uppercase;opacity:.8}
+.lockup{display:flex;align-items:center;gap:16px}
+.lockup .mark{width:clamp(44px,4.4vw,56px);height:auto;flex:none}
+.lockup .mark path{stroke-width:1.6}
+.lockup__type{display:grid;gap:0;line-height:1}
+.lockup__name{
+  font-size:clamp(21px,2.3vw,27px);font-weight:200;letter-spacing:.16em;
+  padding-bottom:9px;
+  border-bottom:1px solid currentColor;
+}
+.lockup__sub{
+  font-size:clamp(8px,.8vw,9.5px);letter-spacing:.34em;text-transform:uppercase;
+  padding-top:8px;
+}
 .ftr__cols{
-  display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center;
+  display:flex;flex-wrap:wrap;gap:9px 26px;align-items:center;
   justify-content:flex-end;
 }
 .ftr a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s var(--ease)}
 .ftr a:hover{border-bottom-color:var(--brand-line)}
-.ftr__legal{opacity:.7;width:100%;text-align:right}
+.ftr__bottom{
+  grid-column:1/-1;
+  display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;gap:10px 24px;
+  margin-top:clamp(16px,2vw,24px);
+  padding-top:13px;
+  border-top:1px solid currentColor;
+  border-color:color-mix(in srgb, currentColor 35%, transparent);
+}
+.ftr__legal{opacity:.55;font-size:12px;letter-spacing:.04em}
+.credit{
+  display:inline-flex;align-items:center;
+  font-size:11.5px;letter-spacing:.04em;
+  opacity:.5;
+  transition:opacity .35s var(--ease);
+}
+.credit:hover,.credit:focus-visible{opacity:.95}
+.credit__mark{width:17px;height:17px;flex:none}
+.credit__txt{
+  white-space:nowrap;overflow:hidden;
+  max-width:0;margin-left:0;opacity:0;
+  transform:translateX(-8px);
+  transition:max-width .6s var(--ease),margin-left .6s var(--ease),
+             opacity .4s var(--ease) .1s,transform .6s var(--ease);
+}
+.credit__txt b{font-weight:400}
+@keyframes rondo-spin{to{transform:rotate(360deg)}}
+@media (hover:hover){
+  .credit:hover .credit__mark,
+  .credit:focus-visible .credit__mark{animation:rondo-spin 1s var(--ease)}
+  .credit:hover .credit__txt,
+  .credit:focus-visible .credit__txt{
+    max-width:180px;margin-left:9px;opacity:1;transform:none;
+  }
+}
+@media (hover:none){
+  .credit__txt{max-width:180px;margin-left:9px;opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .credit__mark{animation:none !important}
+  .credit__txt{max-width:180px;margin-left:9px;opacity:1;transform:none;transition:none}
+}
 @media (max-width:860px){
   .ftr__in{grid-template-columns:1fr}
-  .ftr__cols,.ftr__legal{justify-content:flex-start;text-align:left}
+  .ftr__cols{justify-content:flex-start}
 }
 
 /* ---------- fokus ---------- */
@@ -660,9 +675,6 @@ p:last-child{margin-bottom:0}
 /* ---------- responsive ---------- */
 @media (max-width:1240px){
   .sketch{display:none}
-}
-@media (max-width:1080px){
-  .rail{display:none}
 }
 @media (max-width:900px){
   .hero__grid,.about,.edu,.contact{grid-template-columns:1fr}
@@ -703,19 +715,41 @@ p:last-child{margin-bottom:0}
 
 <a class="skip" href="#pocetna" data-en="Skip to content">Preskoči na sadržaj</a>
 
-<!-- Skica iz logotipa — vektorizovana iz originalnog JPG-a. Crta se odozgo nadole kako se skroluje. -->
+<!-- Ženska figura iz originalnog logotipa. Nije popunjen obris nego izvučene središnje
+     linije (skelet), pa su ovo pravi potezi — iscrtavaju se jedan po jedan kroz skrol. -->
 <div class="sketch" id="sketch" aria-hidden="true">
-  <svg viewBox="0 0 259 476" xmlns="http://www.w3.org/2000/svg">
-    <g transform="translate(0,476) scale(0.1,-0.1)"><path d="M1140 4636 c-150 -45 -181 -67 -226 -159 -39 -79 -40 -85 -36 -160 4 -71 6 -78 23 -74 11 3 17 1 13 -4 -3 -5 -1 -9 5 -9 5 0 13 5 16 10 4 6 16 8 27 4 20 -6 20 -3 16 62 -7 95 17 143 70 144 28 0 28 0 -5 -59 -23 -41 -25 -51 -14 -65 17 -20 51 -4 51 24 0 15 15 27 53 44 50 22 81 50 118 106 20 31 8 35 371 -143 329 -163 300 -128 240 -282 -41 -109 -35 -101 -65 -71 -14 14 -37 28 -51 32 -21 5 -25 12 -24 37 2 61 -33 122 -110 192 -122 110 -304 136 -447 66 -72 -36 -168 -126 -186 -175 -13 -35 -13 -35 -38 -17 -72 51 -135 70 -175 55 -29 -11 -16 -23 24 -22 43 0 100 -19 100 -33 0 -5 -4 -9 -8 -9 -4 0 -16 -13 -25 -30 -15 -25 -24 -30 -57 -28 -71 2 -98 -17 -118 -86 -10 -33 -15 -63 -11 -66 6 -4 39 -77 39 -86 0 -2 -9 -4 -19 -4 -20 0 -30 17 -32 53 -1 16 -4 12 -10 -11 -13 -42 2 -62 45 -62 19 0 42 -10 61 -26 30 -26 30 -26 -10 -22 -22 3 -46 7 -53 9 -8 2 -23 -8 -34 -23 -21 -27 -21 -27 0 -75 23 -51 30 -42 10 13 -17 47 2 67 56 59 61 -9 176 33 195 71 15 29 15 29 26 -16 16 -62 31 -88 76 -135 39 -41 39 -41 28 -100 -43 -231 -111 -310 -334 -385 -168 -56 -195 -76 -195 -142 0 -43 0 -43 19 -12 27 45 67 70 167 105 175 61 253 116 307 217 35 65 67 177 67 237 0 40 3 45 23 45 12 0 33 9 47 20 20 16 21 19 5 14 -11 -4 -25 -11 -32 -16 -14 -11 -25 5 -17 26 3 9 16 16 28 17 11 0 15 3 9 6 -24 9 -13 23 15 18 27 -6 27 -6 0 10 -69 39 42 85 131 54 17 -6 31 -14 31 -18 0 -12 145 5 200 25 75 26 165 116 183 181 15 58 33 65 69 25 34 -39 35 -62 3 -127 -24 -50 -24 -50 -26 30 -2 80 -2 80 -9 8 -5 -55 -15 -89 -44 -145 -31 -61 -37 -85 -39 -143 -3 -60 -6 -70 -22 -74 -23 -4 -50 -31 -106 -107 -23 -32 -47 -54 -58 -54 -35 0 -170 99 -177 128 -20 97 -31 128 -51 148 -27 27 -29 60 -7 92 9 13 11 22 4 22 -33 0 -37 -104 -5 -130 32 -26 53 -172 36 -237 -6 -22 -33 -70 -59 -106 -190 -256 -126 -534 174 -762 43 -33 81 -63 82 -68 8 -16 42 -28 36 -12 -4 8 -10 15 -14 15 -9 0 -174 142 -208 180 -45 48 -100 141 -122 203 -23 68 -39 197 -23 197 5 0 7 15 5 33 -5 40 34 131 81 190 36 44 67 114 67 148 0 12 5 19 13 16 6 -2 10 -13 8 -23 -16 -85 4 -115 82 -122 88 -7 121 9 146 71 24 59 92 137 134 155 24 10 28 16 23 40 -8 33 43 145 72 161 35 19 62 75 68 142 3 35 17 98 30 139 39 123 56 210 45 224 -39 47 -378 219 -553 280 -71 25 -118 28 -118 7 0 -18 -49 -62 -105 -93 -33 -19 -64 -44 -70 -56 -5 -12 -13 -22 -17 -22 -16 0 -7 32 16 63 47 65 42 81 -23 71 -59 -9 -86 -55 -77 -130 3 -30 2 -54 -3 -54 -9 0 -21 57 -21 103 0 18 -4 26 -11 22 -9 -6 -7 -55 7 -127 6 -32 -14 -29 -25 4 -25 78 -23 99 22 177 41 72 44 74 107 97 151 54 239 64 375 40 330 -59 637 -162 699 -237 77 -91 -18 -460 -246 -954 -99 -216 -140 -357 -137 -475 1 -45 1 -45 11 0 30 148 44 193 99 317 161 360 203 462 253 620 82 263 101 443 53 506 -72 94 -334 191 -682 252 -170 30 -228 31 -325 1z m242 -305 c120 -20 225 -97 279 -203 36 -71 36 -72 -2 -141 -105 -195 -297 -239 -547 -124 -68 31 -68 31 -52 14 8 -9 42 -29 75 -46 33 -17 51 -31 41 -31 -10 0 -31 -14 -47 -31 -29 -31 -29 -31 -94 31 -35 35 -74 82 -86 106 -23 48 -35 57 -25 21 7 -29 -15 -62 -37 -54 -35 13 -33 116 3 155 11 12 20 28 20 37 0 8 7 15 15 15 11 0 15 -11 15 -37 0 -31 2 -34 13 -22 20 25 241 177 288 199 25 11 68 20 99 21 47 1 51 2 27 9 -74 22 -200 -28 -324 -129 -74 -60 -77 -55 -22 28 65 97 155 159 262 180 23 5 42 9 42 10 0 0 25 -3 57 -8z m-434 -228 c2 -7 -4 -13 -13 -13 -18 0 -72 -35 -93 -60 -23 -27 -11 -158 16 -181 13 -10 30 -15 37 -12 22 8 19 -24 -2 -36 -34 -18 -116 -25 -111 -10 3 8 13 16 24 17 47 9 36 23 -12 17 -46 -7 -53 -5 -68 16 -26 38 -21 52 14 34 48 -25 58 -17 13 10 -92 55 -56 168 53 170 34 0 46 6 69 33 28 33 64 41 73 15z m851 -304 c-13 -37 -27 -59 -39 -59 -4 0 4 23 18 50 28 57 38 61 21 9z m-795 -9 c10 -17 33 -41 52 -53 31 -20 44 -53 28 -70 -18 -17 -80 56 -102 121 -14 40 -2 42 22 2z m455 -451 c2 -19 -89 -25 -107 -7 -12 12 -16 50 -7 60 6 6 114 -44 114 -53z M1756 2888 c3 -29 10 -74 16 -100 18 -84 -14 -184 -83 -263 -24 -27 -36 -56 -51 -123 -10 -48 -52 -187 -93 -309 -87 -260 -102 -333 -86 -400 27 -104 44 -119 309 -253 295 -149 518 -281 685 -406 47 -36 47 -36 47 -5 0 57 -296 253 -687 453 -150 77 -241 130 -257 149 -54 64 -47 153 34 429 27 91 59 248 69 344 6 52 14 82 23 85 24 8 85 76 109 121 30 59 30 139 -1 243 -28 93 -41 107 -34 35z M695 2833 c16 -115 63 -189 232 -367 217 -230 220 -327 15 -514 -212 -193 -194 -173 -181 -209 11 -33 11 -33 160 108 168 160 205 210 221 298 21 114 -8 170 -176 341 -168 171 -256 298 -256 368 0 12 -5 22 -11 22 -8 0 -9 -15 -4 -47z M2461 2474 c-60 -176 -103 -236 -181 -249 -22 -4 -40 -10 -40 -15 0 -13 48 -16 158 -12 110 5 121 12 82 54 -30 32 -29 70 2 160 12 36 18 76 16 109 -3 53 -3 53 -37 -47z M399 1743 c-186 -196 -299 -417 -299 -588 0 -116 56 -270 117 -327 26 -23 26 -23 1 17 -142 230 -82 509 173 805 65 76 71 85 63 112 -9 29 -9 29 -55 -19z M1113 1159 c-38 -11 -38 -12 -18 -43 13 -20 21 -22 68 -18 134 11 549 -145 1010 -379 66 -33 121 -59 123 -57 2 3 -60 41 -139 85 -484 277 -922 449 -1044 412z M1450 683 c0 -5 17 -25 38 -45 36 -36 40 -37 182 -57 203 -28 223 -36 350 -146 129 -111 232 -189 358 -274 129 -86 122 -86 122 -5 -1 69 -1 69 -48 99 -71 45 -279 201 -347 261 -79 69 -153 93 -405 133 -107 17 -207 34 -222 37 -16 3 -28 2 -28 -3z"/></g>
+  <svg class="figure" viewBox="47 28 225 450" xmlns="http://www.w3.org/2000/svg" fill="none"
+       stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M268.0,473.5 C266.8,470.2 269.7,469.2 264.2,463.8 C258.8,458.2 242.9,445.2 235.2,440.5 C227.6,435.8 229.2,437.8 218.5,435.8 C207.8,433.8 183.5,431.0 171.2,428.5 C159.0,426.0 151.5,423.0 145.0,420.8 C138.5,418.5 136.2,417.1 132.0,414.8 C127.8,412.4 123.5,409.9 119.5,406.8 C115.5,403.6 110.8,398.9 108.0,395.8 C105.2,392.6 104.2,390.9 102.5,388.0 C100.8,385.1 99.2,381.8 98.0,378.2 C96.8,374.8 95.9,370.6 95.5,367.0 C95.1,363.4 95.1,360.7 95.8,356.8 C96.4,352.8 98.1,347.2 99.5,343.5 C100.9,339.8 102.2,337.9 104.2,334.8 C106.3,331.6 105.2,331.5 112.0,324.5 C118.8,317.5 138.9,299.0 145.0,292.8 C151.1,286.5 147.8,289.0 148.8,286.8 C149.7,284.5 150.5,281.4 150.8,279.0 C151.0,276.6 151.0,274.7 150.5,272.2 C150.0,269.8 149.1,267.1 147.8,264.5 C146.4,261.9 146.2,261.1 142.2,256.8 C138.2,252.4 128.2,243.2 123.8,238.2 C119.2,233.3 117.5,231.0 115.2,227.2 C113.0,223.5 111.0,219.2 110.0,216.0 C109.0,212.8 109.3,210.7 109.0,208.0"/>
+    <path d="M212.2,203.5 C212.8,199.0 213.2,194.1 214.0,190.0 C214.8,185.9 212.8,189.0 217.0,178.8 C221.2,168.5 233.6,142.5 239.2,128.2 C244.9,114.0 248.4,102.3 251.0,93.0 C253.6,83.7 254.2,77.2 254.8,72.2 C255.3,67.2 254.9,65.4 254.5,63.0 C254.1,60.6 253.5,59.6 252.2,58.0 C251.0,56.4 249.0,55.0 246.8,53.5 C244.5,52.0 243.6,51.2 238.8,49.2 C233.9,47.2 226.4,44.0 217.8,41.5 C209.1,39.0 195.9,35.9 187.0,34.2 C178.1,32.6 171.1,31.2 164.5,31.5 C157.9,31.8 152.2,34.1 147.2,35.8 C142.3,37.4 138.1,38.2 134.8,41.5 C131.4,44.8 128.4,51.2 127.2,55.8 C126.1,60.3 127.3,66.2 128.0,68.8 C128.7,71.3 130.2,70.2 131.2,71.0"/>
+    <path d="M268.0,380.2 C267.2,379.0 268.2,378.5 265.8,376.5 C263.3,374.5 264.8,374.8 253.2,368.5 C241.8,362.2 207.1,344.7 196.8,339.0 C186.4,333.3 192.4,335.9 191.0,334.2 C189.6,332.6 189.1,331.0 188.5,329.0 C187.9,327.0 187.5,325.3 187.5,322.5 C187.5,319.7 186.4,320.5 188.5,312.2 C190.6,304.0 197.5,283.4 200.2,272.8 C203.0,262.1 202.8,253.8 204.8,248.5 C206.7,243.2 209.8,244.0 212.0,241.0 C214.2,238.0 216.8,234.2 217.8,230.2 C218.8,226.3 218.5,222.2 218.0,217.5 C217.5,212.8 215.7,207.3 214.5,202.2"/>
+    <path d="M146.0,131.5 C145.1,137.4 144.4,144.5 143.2,149.2 C142.1,154.0 140.6,157.2 139.2,160.0 C137.9,162.8 136.9,164.3 135.2,166.2 C133.6,168.2 131.8,169.9 129.5,171.5 C127.2,173.1 126.7,174.0 121.8,176.0 C116.8,178.0 104.2,182.0 99.8,183.8 C95.3,185.5 96.5,185.4 95.0,186.8 C93.5,188.1 91.7,190.0 90.5,192.0 C89.3,194.0 88.5,196.1 88.0,199.0 C87.5,201.9 86.9,204.2 87.5,209.2 C88.1,214.3 87.8,216.6 91.8,229.2 C95.7,241.9 107.4,274.8 111.2,285.2 C115.1,295.7 113.8,289.6 115.0,291.8"/>
+    <path d="M60.8,412.8 C58.8,409.4 56.6,406.8 55.0,402.8 C53.4,398.7 51.8,393.5 51.2,388.5 C50.7,383.5 51.1,377.1 51.8,372.5 C52.4,367.9 53.3,365.3 55.2,360.8 C57.2,356.2 60.0,350.4 63.5,345.0 C67.0,339.6 71.9,333.2 76.2,328.2 C80.6,323.2 84.1,319.9 89.5,315.0 C94.9,310.1 103.5,303.9 108.8,299.0 C114.0,294.1 118.3,289.8 121.2,285.5 C124.2,281.2 125.5,277.5 126.2,273.2 C127.0,269.0 126.1,264.2 126.0,259.8"/>
+    <path d="M136.0,85.0 C137.8,82.1 139.5,78.8 141.5,76.2 C143.5,73.7 145.5,71.5 148.0,69.5 C150.5,67.5 153.2,65.5 156.8,64.0 C160.2,62.5 165.2,61.0 169.0,60.5 C172.8,60.0 176.3,60.5 179.5,61.0 C182.7,61.5 185.5,62.5 188.2,63.8 C191.0,65.0 193.2,66.2 195.8,68.2 C198.3,70.2 201.3,72.9 203.5,75.8 C205.7,78.6 208.0,82.8 209.0,85.5 C210.0,88.2 210.1,89.2 209.5,92.0 C208.9,94.8 207.1,99.0 205.2,102.0 C203.4,105.0 200.8,108.1 198.5,110.2 C196.2,112.4 193.9,113.5 191.2,114.8 C188.6,116.0 185.5,117.0 182.5,117.5 C179.5,118.0 177.0,118.1 173.0,117.8 C169.0,117.4 163.3,116.1 158.5,115.2"/>
+    <path d="M261.2,425.8 C251.1,420.4 240.2,414.5 230.8,409.8 C221.2,405.0 213.2,401.3 204.2,397.5 C195.3,393.7 184.1,389.4 177.0,387.0 C169.9,384.6 166.2,383.7 161.8,383.0 C157.2,382.3 153.1,381.0 150.0,383.0 C146.9,385.0 145.8,391.6 143.0,395.2 C140.2,398.9 136.3,401.8 133.0,405.0"/>
+    <path d="M182.8,245.8 C177.5,241.3 170.9,236.2 167.0,232.5 C163.1,228.8 161.8,226.8 159.5,223.2 C157.2,219.7 155.0,215.1 153.5,211.2 C152.0,207.4 151.2,203.6 150.8,200.2 C150.2,196.9 150.2,194.1 150.5,191.0 C150.8,187.9 151.3,184.9 152.5,181.5 C153.7,178.1 155.6,174.3 157.8,170.8 C159.9,167.2 163.8,163.5 165.5,160.0 C167.2,156.5 168.4,154.3 168.2,149.8 C168.1,145.2 165.6,136.0 164.5,132.8 C163.4,129.5 162.4,131.2 161.8,130.2 C161.1,129.2 160.7,128.0 160.5,126.8 C160.3,125.5 160.4,124.0 160.8,122.8 C161.1,121.5 162.1,120.4 162.8,119.2"/>
+    <path d="M165.8,43.2 C175.9,47.4 185.5,50.6 196.2,55.8 C207.0,60.9 225.0,68.5 230.0,74.0 C235.0,79.5 227.7,84.5 226.5,88.5 C225.3,92.5 223.9,96.4 223.0,98.2 C222.1,100.1 221.8,99.2 221.2,99.8"/>
+    <path d="M164.5,44.2 C162.2,47.0 160.4,50.2 157.5,52.5 C154.6,54.8 149.2,56.2 147.2,57.8 C145.3,59.3 146.3,61.1 145.8,62.0 C145.2,62.9 144.4,63.2 143.8,63.2 C143.1,63.2 142.0,62.8 141.8,62.0 C141.5,61.2 141.5,60.4 142.2,58.8 C143.0,57.1 145.8,53.8 146.5,52.2 C147.2,50.7 147.8,49.9 146.8,49.5 C145.7,49.1 141.9,48.7 140.0,50.0 C138.1,51.3 136.1,54.4 135.5,57.2 C134.9,60.1 136.5,65.1 136.5,67.0 C136.5,68.9 135.7,68.2 135.2,68.8"/>
+    <path d="M207.0,131.2 C206.8,134.8 207.1,140.0 206.2,142.0 C205.4,144.0 203.5,142.2 202.0,143.2 C200.5,144.3 199.6,145.0 197.0,148.5 C194.4,152.0 188.8,161.4 186.2,164.2 C183.7,167.1 183.7,165.5 181.5,165.5 C179.3,165.5 174.8,165.1 173.0,164.2 C171.2,163.4 171.0,161.9 171.0,160.2 C171.0,158.6 172.3,156.2 173.0,154.2"/>
+    <path d="M176.2,71.2 C173.3,71.2 170.2,70.8 167.5,71.2 C164.8,71.7 164.9,70.7 160.0,73.8 C155.1,76.8 142.1,86.8 138.0,89.5 C133.9,92.2 136.2,90.0 135.2,90.2"/>
+    <path d="M134.2,100.2 C137.1,101.6 136.3,102.6 142.8,104.2 C149.2,105.9 162.8,108.2 172.8,110.2"/>
+    <path d="M102.8,109.2 C102.0,108.8 101.2,108.8 100.5,108.0 C99.8,107.2 99.1,106.2 98.8,104.2 C98.4,102.2 97.9,98.5 98.2,96.0 C98.6,93.5 100.0,91.1 101.0,89.5 C102.0,87.9 103.3,86.9 104.2,86.2 C105.2,85.6 105.9,85.9 106.8,85.8"/>
+    <path d="M106.2,132.5 C106.3,131.9 106.9,131.9 106.5,130.8 C106.1,129.6 104.3,127.2 104.0,125.8 C103.7,124.2 104.2,122.8 104.8,121.8 C105.3,120.8 105.6,119.9 107.2,119.8 C108.9,119.6 112.8,121.1 114.5,121.0 C116.2,120.9 116.7,119.8 117.8,119.2"/>
+    <path d="M132.2,109.8 C130.4,110.0 128.0,110.8 126.8,110.5 C125.5,110.2 125.1,110.4 124.5,108.2 C123.9,106.1 123.1,100.2 123.2,97.5 C123.4,94.8 124.8,94.0 125.5,92.2"/>
+    <path d="M134.8,111.5 C135.0,113.8 134.8,116.2 135.5,118.5 C136.2,120.8 137.0,122.9 138.8,125.0 C140.5,127.1 143.6,129.2 146.0,131.2"/>
+    <path d="M129.5,82.0 C128.8,81.2 129.2,80.6 127.5,79.8 C125.8,78.9 121.4,77.2 119.0,77.0 C116.6,76.8 114.7,77.8 113.2,78.5 C111.8,79.2 110.8,80.2 110.2,81.0 C109.7,81.8 109.9,82.3 109.8,83.0"/>
   </svg>
 </div>
 
 <!-- =========================== HEADER =========================== -->
 <header class="hdr" id="hdr">
   <div class="hdr__in">
-    <a class="brand" href="#pocetna" aria-label="Atelje — Reformer Pilates">
-      <span class="brand__name">Atelje</span>
-      <span class="brand__sub">Reformer Pilates</span>
+    <a class="brand" href="#pocetna" aria-label="Atelje — Pilates &amp; Wellness">
+      <svg class="mark" viewBox="275 286 664 718" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="butt" stroke-linejoin="round" ><path d="M394,629 V343 A317,323 0 0 1 711,666"/><path d="M607.8,306.0 A329.3,368.3 0 0 1 833,655.4 V984"/><path d="M295,695 H919"/><path d="M711,695 V984"/><circle cx="394" cy="797" r="17" fill="currentColor" stroke="none"/></svg>
+      <span class="brand__type">
+        <span class="brand__name">Atelje</span>
+        <span class="brand__sub">Pilates &amp; Wellness</span>
+      </span>
     </a>
     <nav class="nav" id="nav" aria-label="Glavna navigacija">
       <a href="#o-nama" data-en="About">O nama</a>
@@ -736,18 +770,6 @@ p:last-child{margin-bottom:0}
   </div>
 </header>
 
-<!-- =========================== ŠINA (potpis) =========================== -->
-<nav class="rail" id="rail" aria-label="Sekcije stranice">
-  <span class="rail__carriage" id="carriage"></span>
-  <a href="#pocetna"><span class="rail__dot"></span><span class="rail__name" data-en="Home">Početna</span></a>
-  <a href="#o-nama"><span class="rail__dot"></span><span class="rail__name" data-en="About">O nama</span></a>
-  <a href="#casovi"><span class="rail__dot"></span><span class="rail__name" data-en="Classes">Časovi</span></a>
-  <a href="#usluge"><span class="rail__dot"></span><span class="rail__name" data-en="Services">Usluge</span></a>
-  <a href="#edukacije"><span class="rail__dot"></span><span class="rail__name" data-en="Training">Edukacije</span></a>
-  <a href="#utisci"><span class="rail__dot"></span><span class="rail__name" data-en="Reviews">Utisci</span></a>
-  <a href="#cenovnik"><span class="rail__dot"></span><span class="rail__name" data-en="Pricing">Cenovnik</span></a>
-  <a href="#kontakt"><span class="rail__dot"></span><span class="rail__name" data-en="Contact">Kontakt</span></a>
-</nav>
 
 <main id="main">
 
@@ -1132,11 +1154,11 @@ p:last-child{margin-bottom:0}
 <!-- =========================== FOOTER =========================== -->
 <footer class="ftr">
   <div class="ftr__in">
-    <a class="lockup" href="#pocetna" aria-label="Atelje — Reformer Pilates">
-      <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="616 88" transform="rotate(245 120 120)"/><g transform="translate(52,50) scale(0.29) translate(0,476) scale(0.1,-0.1)" fill="currentColor"><path d="M1140 4636 c-150 -45 -181 -67 -226 -159 -39 -79 -40 -85 -36 -160 4 -71 6 -78 23 -74 11 3 17 1 13 -4 -3 -5 -1 -9 5 -9 5 0 13 5 16 10 4 6 16 8 27 4 20 -6 20 -3 16 62 -7 95 17 143 70 144 28 0 28 0 -5 -59 -23 -41 -25 -51 -14 -65 17 -20 51 -4 51 24 0 15 15 27 53 44 50 22 81 50 118 106 20 31 8 35 371 -143 329 -163 300 -128 240 -282 -41 -109 -35 -101 -65 -71 -14 14 -37 28 -51 32 -21 5 -25 12 -24 37 2 61 -33 122 -110 192 -122 110 -304 136 -447 66 -72 -36 -168 -126 -186 -175 -13 -35 -13 -35 -38 -17 -72 51 -135 70 -175 55 -29 -11 -16 -23 24 -22 43 0 100 -19 100 -33 0 -5 -4 -9 -8 -9 -4 0 -16 -13 -25 -30 -15 -25 -24 -30 -57 -28 -71 2 -98 -17 -118 -86 -10 -33 -15 -63 -11 -66 6 -4 39 -77 39 -86 0 -2 -9 -4 -19 -4 -20 0 -30 17 -32 53 -1 16 -4 12 -10 -11 -13 -42 2 -62 45 -62 19 0 42 -10 61 -26 30 -26 30 -26 -10 -22 -22 3 -46 7 -53 9 -8 2 -23 -8 -34 -23 -21 -27 -21 -27 0 -75 23 -51 30 -42 10 13 -17 47 2 67 56 59 61 -9 176 33 195 71 15 29 15 29 26 -16 16 -62 31 -88 76 -135 39 -41 39 -41 28 -100 -43 -231 -111 -310 -334 -385 -168 -56 -195 -76 -195 -142 0 -43 0 -43 19 -12 27 45 67 70 167 105 175 61 253 116 307 217 35 65 67 177 67 237 0 40 3 45 23 45 12 0 33 9 47 20 20 16 21 19 5 14 -11 -4 -25 -11 -32 -16 -14 -11 -25 5 -17 26 3 9 16 16 28 17 11 0 15 3 9 6 -24 9 -13 23 15 18 27 -6 27 -6 0 10 -69 39 42 85 131 54 17 -6 31 -14 31 -18 0 -12 145 5 200 25 75 26 165 116 183 181 15 58 33 65 69 25 34 -39 35 -62 3 -127 -24 -50 -24 -50 -26 30 -2 80 -2 80 -9 8 -5 -55 -15 -89 -44 -145 -31 -61 -37 -85 -39 -143 -3 -60 -6 -70 -22 -74 -23 -4 -50 -31 -106 -107 -23 -32 -47 -54 -58 -54 -35 0 -170 99 -177 128 -20 97 -31 128 -51 148 -27 27 -29 60 -7 92 9 13 11 22 4 22 -33 0 -37 -104 -5 -130 32 -26 53 -172 36 -237 -6 -22 -33 -70 -59 -106 -190 -256 -126 -534 174 -762 43 -33 81 -63 82 -68 8 -16 42 -28 36 -12 -4 8 -10 15 -14 15 -9 0 -174 142 -208 180 -45 48 -100 141 -122 203 -23 68 -39 197 -23 197 5 0 7 15 5 33 -5 40 34 131 81 190 36 44 67 114 67 148 0 12 5 19 13 16 6 -2 10 -13 8 -23 -16 -85 4 -115 82 -122 88 -7 121 9 146 71 24 59 92 137 134 155 24 10 28 16 23 40 -8 33 43 145 72 161 35 19 62 75 68 142 3 35 17 98 30 139 39 123 56 210 45 224 -39 47 -378 219 -553 280 -71 25 -118 28 -118 7 0 -18 -49 -62 -105 -93 -33 -19 -64 -44 -70 -56 -5 -12 -13 -22 -17 -22 -16 0 -7 32 16 63 47 65 42 81 -23 71 -59 -9 -86 -55 -77 -130 3 -30 2 -54 -3 -54 -9 0 -21 57 -21 103 0 18 -4 26 -11 22 -9 -6 -7 -55 7 -127 6 -32 -14 -29 -25 4 -25 78 -23 99 22 177 41 72 44 74 107 97 151 54 239 64 375 40 330 -59 637 -162 699 -237 77 -91 -18 -460 -246 -954 -99 -216 -140 -357 -137 -475 1 -45 1 -45 11 0 30 148 44 193 99 317 161 360 203 462 253 620 82 263 101 443 53 506 -72 94 -334 191 -682 252 -170 30 -228 31 -325 1z m242 -305 c120 -20 225 -97 279 -203 36 -71 36 -72 -2 -141 -105 -195 -297 -239 -547 -124 -68 31 -68 31 -52 14 8 -9 42 -29 75 -46 33 -17 51 -31 41 -31 -10 0 -31 -14 -47 -31 -29 -31 -29 -31 -94 31 -35 35 -74 82 -86 106 -23 48 -35 57 -25 21 7 -29 -15 -62 -37 -54 -35 13 -33 116 3 155 11 12 20 28 20 37 0 8 7 15 15 15 11 0 15 -11 15 -37 0 -31 2 -34 13 -22 20 25 241 177 288 199 25 11 68 20 99 21 47 1 51 2 27 9 -74 22 -200 -28 -324 -129 -74 -60 -77 -55 -22 28 65 97 155 159 262 180 23 5 42 9 42 10 0 0 25 -3 57 -8z m-434 -228 c2 -7 -4 -13 -13 -13 -18 0 -72 -35 -93 -60 -23 -27 -11 -158 16 -181 13 -10 30 -15 37 -12 22 8 19 -24 -2 -36 -34 -18 -116 -25 -111 -10 3 8 13 16 24 17 47 9 36 23 -12 17 -46 -7 -53 -5 -68 16 -26 38 -21 52 14 34 48 -25 58 -17 13 10 -92 55 -56 168 53 170 34 0 46 6 69 33 28 33 64 41 73 15z m851 -304 c-13 -37 -27 -59 -39 -59 -4 0 4 23 18 50 28 57 38 61 21 9z m-795 -9 c10 -17 33 -41 52 -53 31 -20 44 -53 28 -70 -18 -17 -80 56 -102 121 -14 40 -2 42 22 2z m455 -451 c2 -19 -89 -25 -107 -7 -12 12 -16 50 -7 60 6 6 114 -44 114 -53z M1756 2888 c3 -29 10 -74 16 -100 18 -84 -14 -184 -83 -263 -24 -27 -36 -56 -51 -123 -10 -48 -52 -187 -93 -309 -87 -260 -102 -333 -86 -400 27 -104 44 -119 309 -253 295 -149 518 -281 685 -406 47 -36 47 -36 47 -5 0 57 -296 253 -687 453 -150 77 -241 130 -257 149 -54 64 -47 153 34 429 27 91 59 248 69 344 6 52 14 82 23 85 24 8 85 76 109 121 30 59 30 139 -1 243 -28 93 -41 107 -34 35z M695 2833 c16 -115 63 -189 232 -367 217 -230 220 -327 15 -514 -212 -193 -194 -173 -181 -209 11 -33 11 -33 160 108 168 160 205 210 221 298 21 114 -8 170 -176 341 -168 171 -256 298 -256 368 0 12 -5 22 -11 22 -8 0 -9 -15 -4 -47z M2461 2474 c-60 -176 -103 -236 -181 -249 -22 -4 -40 -10 -40 -15 0 -13 48 -16 158 -12 110 5 121 12 82 54 -30 32 -29 70 2 160 12 36 18 76 16 109 -3 53 -3 53 -37 -47z M399 1743 c-186 -196 -299 -417 -299 -588 0 -116 56 -270 117 -327 26 -23 26 -23 1 17 -142 230 -82 509 173 805 65 76 71 85 63 112 -9 29 -9 29 -55 -19z M1113 1159 c-38 -11 -38 -12 -18 -43 13 -20 21 -22 68 -18 134 11 549 -145 1010 -379 66 -33 121 -59 123 -57 2 3 -60 41 -139 85 -484 277 -922 449 -1044 412z M1450 683 c0 -5 17 -25 38 -45 36 -36 40 -37 182 -57 203 -28 223 -36 350 -146 129 -111 232 -189 358 -274 129 -86 122 -86 122 -5 -1 69 -1 69 -48 99 -71 45 -279 201 -347 261 -79 69 -153 93 -405 133 -107 17 -207 34 -222 37 -16 3 -28 2 -28 -3z"/></g></svg>
+    <a class="lockup" href="#pocetna" aria-label="Atelje — Pilates &amp; Wellness">
+      <svg class="mark mark--lock" viewBox="275 286 664 718" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="butt" stroke-linejoin="round" ><path d="M394,629 V343 A317,323 0 0 1 711,666"/><path d="M607.8,306.0 A329.3,368.3 0 0 1 833,655.4 V984"/><path d="M295,695 H919"/><path d="M711,695 V984"/><circle cx="394" cy="797" r="17" fill="currentColor" stroke="none"/></svg>
       <span class="lockup__type">
         <span class="lockup__name">Atelje</span>
-        <span class="lockup__sub">Reformer Pilates</span>
+        <span class="lockup__sub">Pilates &amp; Wellness</span>
       </span>
     </a>
     <div class="ftr__cols">
@@ -1146,7 +1168,14 @@ p:last-child{margin-bottom:0}
       <a href="#utisci" data-en="Reviews">Utisci</a>
       <a href="#cenovnik" data-en="Pricing">Cenovnik</a>
       <a href="#kontakt" data-en="Contact">Kontakt</a>
-      <span class="ftr__legal">© <span id="god">2026</span> Atelje · Reformer Pilates</span>
+    </div>
+    <div class="ftr__bottom">
+      <span class="ftr__legal">© <span id="god">2026</span> Atelje · Pilates &amp; Wellness</span>
+      <a class="credit" href="https://rondo.rs" target="_blank" rel="noopener">
+        <svg class="credit__mark" viewBox="0 0 256 256" style="transform-origin:50% 50%" xmlns="http://www.w3.org/2000/svg"
+             fill="none" stroke="currentColor" stroke-width="19" aria-hidden="true"><circle cx="127.5" cy="127.5" r="84.4" stroke-dasharray="468.4 61.9" transform="rotate(300 127.5 127.5)"/></svg>
+        <span class="credit__txt">WebDesign <b>Rondo</b></span>
+      </a>
     </div>
   </div>
 </footer>
@@ -1181,19 +1210,9 @@ p:last-child{margin-bottom:0}
 
   /* aktivna sekcija: header nav + šina */
   var ids = ["pocetna","o-nama","casovi","usluge","edukacije","utisci","cenovnik","kontakt"];
-  var railLinks = Array.prototype.slice.call(document.querySelectorAll("#rail a"));
-  var navLinks  = Array.prototype.slice.call(document.querySelectorAll("#nav a[href^='#']"));
-  var carriage  = document.getElementById("carriage");
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll("#nav a[href^='#']"));
 
   function setActive(id){
-    railLinks.forEach(function(a){
-      var on = a.getAttribute("href") === "#" + id;
-      if(on){ a.setAttribute("aria-current","true"); } else { a.removeAttribute("aria-current"); }
-      if(on && carriage){
-        var top = a.offsetTop + (a.offsetHeight - carriage.offsetHeight)/2;
-        carriage.style.transform = "translateY(" + top + "px)";
-      }
-    });
     navLinks.forEach(function(a){
       if(a.classList.contains("btn")) return;
       if(a.getAttribute("href") === "#" + id){ a.setAttribute("aria-current","true"); }
@@ -1228,43 +1247,55 @@ p:last-child{margin-bottom:0}
   }
 
   setActive("pocetna");
-  window.addEventListener("resize", function(){
-    var cur = document.querySelector("#rail a[aria-current='true']");
-    if(cur) setActive(cur.getAttribute("href").slice(1));
-  });
 
-  /* skica se "crta" odozgo nadole kroz ceo landing */
+  /* monogram se iscrtava potez po potez kroz ceo landing */
   var sketch = document.getElementById("sketch");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(sketch){
-    var svg = sketch.querySelector("svg");
+    var strokes = Array.prototype.slice.call(sketch.querySelectorAll("path"));
+    var dot = sketch.querySelector("circle");
+    strokes.forEach(function(el){
+      var L = el.getTotalLength() + 2;
+      el.style.strokeDasharray = L;
+      el.style.strokeDashoffset = reduce ? 0 : L;
+      el.style.opacity = reduce ? 1 : 0;
+      el.setAttribute("data-len", L);
+    });
     if(reduce){
-      svg.style.clipPath = "inset(0 0 0 0)";
+      if(dot) dot.style.opacity = 1;
     } else {
-      var ticking = false;
-      var draw = function(){
+      var tickingS = false;
+      var drawMark = function(){
         var max = document.documentElement.scrollHeight - window.innerHeight;
-        var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 1;
-        var shown = 12 + 88 * p;           /* na vrhu se vidi samo glava i ruke */
-        svg.style.clipPath = "inset(0 0 " + (100 - shown).toFixed(2) + "% 0)";
-        ticking = false;
+        var prog = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 1;
+        var n = strokes.length;
+        strokes.forEach(function(el, i){
+          var a = (i / n) * 0.72;
+          var b = a + 0.72 / n + 0.2;
+          var t = Math.min(1, Math.max(0, (prog - a) / (b - a)));
+          el.style.opacity = t > 0.002 ? 1 : 0;
+          el.style.strokeDashoffset = parseFloat(el.getAttribute("data-len")) * (1 - t);
+        });
+        if(dot) dot.style.opacity = prog > 0.82 ? 1 : 0;
+        document.documentElement.style.setProperty("--prog", (prog*100).toFixed(2) + "%");
+        tickingS = false;
       };
       window.addEventListener("scroll", function(){
-        if(!ticking){ ticking = true; requestAnimationFrame(draw); }
+        if(!tickingS){ tickingS = true; requestAnimationFrame(drawMark); }
       }, {passive:true});
-      window.addEventListener("resize", draw, {passive:true});
-      draw();
+      window.addEventListener("resize", drawMark, {passive:true});
+      drawMark();
     }
   }
 
   /* ---------- SR / EN ---------- */
   var META = {
     sr: {
-      title:"Atelje — Reformer Pilates",
+      title:"Atelje — Pilates & Wellness",
       desc:"Atelje — studio za reformer pilates. Grupni i individualni časovi, programi za držanje tela i edukacije za instruktore."
     },
     en: {
-      title:"Atelje — Reformer Pilates Studio",
+      title:"Atelje — Pilates & Wellness",
       desc:"Atelje — a reformer pilates studio. Group and private classes, posture programmes and instructor training."
     }
   };
